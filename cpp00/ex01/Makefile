@@ -1,10 +1,10 @@
-NAME	= AT&T_Telephone
+NAME	= Samsumg_Galaxy_Mini
 
 CC		= c++
 FLAGS	= -Wall -Wextra -Werror
 RM		= rm
 
-SRC		= 
+SRC		= vodafone.cpp
 
 all:	$(NAME)
 
