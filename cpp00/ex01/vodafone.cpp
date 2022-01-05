@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 23:55:18 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/04 19:22:18 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/05 21:47:54 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 int	main(void)
 {
-	Contact	cont[8];
+	Telephone	info;
 	std::string	cmd;
 
 	std::cout << "Welcome to your Samsung Galaxy Mini\nPowered by Android 2.2 Froyo\n";
 	while (true)
 	{
-		std::cout << "Insert a command: ";
-		std::cin >> cmd;
+		std::cout << std::endl << "Insert a command: " << std::endl << "> ";
+		std::getline(std::cin, cmd);
 		if (cmd == "ADD")
-			std::cout << "Not working" << std::endl;
+			info.add_contact();
 		else if (cmd == "SEARCH")
-			std::cout << "Not working" << std::endl;
+			info.show_contacts();
 		else if (cmd == "EXIT")
 			break ;
 		else
-			std::cout << "That is not a valid command" << std::endl << "Please, be a better person\n";
+			std::cout << "That is not a valid command" << std::endl << "Please, be a better person" << std::endl << std::endl;
 
 	}
 	std::cout << "Bye, my lord!" << std::endl;

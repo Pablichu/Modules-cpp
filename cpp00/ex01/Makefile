@@ -4,16 +4,23 @@ CC		= c++
 FLAGS	= -Wall -Wextra -Werror
 RM		= rm
 
-SRC		= vodafone.cpp
+SRC		=	movistar.cpp \
+			vodafone.cpp \
+			orange.cpp
+
+OBJS	=	$(SRC:.cpp=.o)
 
 all:	$(NAME)
 
-$(NAME):	
-			$(CC) $(FLAGS) $(SRC) -o $(NAME)
+$(NAME):	$(OBJS)
+			$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
-fclean:
-		@$(RM) $(NAME)
+clean:
+		@$(RM) $(OBJS)
+
+fclean:	clean
+		$(RM) $(NAME)
 
 re:		fclean all
 
-.PHONE:	all fclean re
+.PHONE:	all clean fclean re

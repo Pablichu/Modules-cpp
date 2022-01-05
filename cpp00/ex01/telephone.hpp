@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 23:55:51 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/04 22:19:31 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/05 18:53:35 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,14 @@ class	Contact
 		std::string	dark_secret;
 	
 	public:
+		Contact();
+		~Contact();
+
 		bool	setted();
 		void	add_contact();
 		void	show_contact(int i);
 		void	show_everything();
 };
-
-Contact::Contact()
-{
-	this->set = false;
-}
-
-Contact::~Contact() {}
 
 class Telephone
 {
@@ -53,12 +49,5 @@ class Telephone
 		void	add_contact();
 		void	show_contacts();
 };
-
-Telephone::Telephone()
-{
-	this->pos = 0;
-}
-
-Telephone::~Telephone() {}
 
 #endif

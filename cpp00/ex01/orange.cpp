@@ -12,18 +12,25 @@
 
 #include "telephone.hpp"
 
+Contact::Contact()
+{
+	this->set = false;
+}
+
+Contact::~Contact() {}
+
 void	Contact::add_contact()
 {
-	std::cout << "Insert contact name: ";
-	std::cin >> this->name;
-	std::cout << "Insert last name: ";
-	std::cin >> this->last_name;
-	std::cout << "Insert nickname: ";
-	std::cin >> this->nickname;
-	std::cout << "Insert phone number: ";
-	std::cin >> this->phone_nb;
-	std::cout << "Insert... his/her dark secret... ";
-	std::cin >> this->dark_secret;
+	std::cout << "Insert contact name: " << std::endl << "> ";
+	std::getline(std::cin, this->name);
+	std::cout << "Insert last name: " << std::endl << "> ";
+	std::getline(std::cin, this->last_name);
+	std::cout << "Insert nickname: " << std::endl << "> ";
+	std::getline(std::cin, this->nickname);
+	std::cout << "Insert phone number: " << std::endl << "> ";
+	std::getline(std::cin, this->phone_nb);
+	std::cout << "Insert... his/her dark secret... " << std::endl << "> ";
+	std::getline(std::cin, this->dark_secret);
 	this->set = true;
 }
 
@@ -44,7 +51,7 @@ void	print_info(std::string data, bool pipe)
 
 void	Contact::show_contact(int i)
 {
-	std::cout << std::setw(10) << i << "|";
+	std::cout << std::setw(10) << i + 1 << "|";
 	print_info(this->name, true);
 	print_info(this->last_name, true);
 	print_info(this->nickname, false);
@@ -53,9 +60,14 @@ void	Contact::show_contact(int i)
 
 void	Contact::show_everything()
 {
-	std::cout << this->name << std::endl;
-	std::cout << this->last_name << std::endl;
-	std::cout << this->nickname << std::endl;
-	std::cout << this->phone_nb << std::endl;
-	std::cout << this->dark_secret << std::endl;
+	if (this->set == false)
+	{
+		std::cout << "Contact not setted yet" << std::endl;
+		return ;
+	}
+	std::cout << "Name -> " << this->name << std::endl;
+	std::cout << "Last name ->" << this->last_name << std::endl;
+	std::cout << "Nickname -> " << this->nickname << std::endl;
+	std::cout << "Number -> " << this->phone_nb << std::endl;
+	std::cout << "Dark secret -> " << this->dark_secret << std::endl;
 }
