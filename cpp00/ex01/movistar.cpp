@@ -14,17 +14,17 @@
 
 Telephone::Telephone()
 {
-	this->pos = 0;
+	this->_pos = 0;
 }
 
 Telephone::~Telephone() {}
 
 void	Telephone::add_contact()
 {
-	contacts[this->pos].add_contact();
-	this->pos++;
-	if (this->pos == 8)
-		this->pos = 0;
+	contacts[this->_pos].add_contact();
+	this->_pos++;
+	if (this->_pos == 8)
+		this->_pos = 0;
 }
 
 bool isNumber(const std::string& str)
@@ -51,7 +51,7 @@ void	Telephone::show_contacts()
 		return ;
 	}
 	pos = std::stoi(who);
-	if (pos < 1 && pos > 8)
+	if (pos < 1 || pos > 8)
 	{
 		std::cout << "Not in the memory range" << std::endl;
 		return ;

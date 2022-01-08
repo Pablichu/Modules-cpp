@@ -14,7 +14,7 @@
 
 Contact::Contact()
 {
-	this->set = false;
+	this->_set = false;
 }
 
 Contact::~Contact() {}
@@ -22,21 +22,21 @@ Contact::~Contact() {}
 void	Contact::add_contact()
 {
 	std::cout << "Insert contact name: " << std::endl << "> ";
-	std::getline(std::cin, this->name);
+	std::getline(std::cin, this->_name);
 	std::cout << "Insert last name: " << std::endl << "> ";
-	std::getline(std::cin, this->last_name);
+	std::getline(std::cin, this->_last_name);
 	std::cout << "Insert nickname: " << std::endl << "> ";
-	std::getline(std::cin, this->nickname);
+	std::getline(std::cin, this->_nickname);
 	std::cout << "Insert phone number: " << std::endl << "> ";
-	std::getline(std::cin, this->phone_nb);
-	std::cout << "Insert... his/her dark secret... " << std::endl << "> ";
-	std::getline(std::cin, this->dark_secret);
-	this->set = true;
+	std::getline(std::cin, this->_phone_nb);
+	std::cout << "Insert... their dark secret... " << std::endl << "> ";
+	std::getline(std::cin, this->_dark_secret);
+	this->_set = true;
 }
 
 bool	Contact::setted()
 {
-	return(this->set);
+	return(this->_set);
 }
 
 void	print_info(std::string data, bool pipe)
@@ -52,22 +52,22 @@ void	print_info(std::string data, bool pipe)
 void	Contact::show_contact(int i)
 {
 	std::cout << std::setw(10) << i + 1 << "|";
-	print_info(this->name, true);
-	print_info(this->last_name, true);
-	print_info(this->nickname, false);
+	print_info(this->_name, true);
+	print_info(this->_last_name, true);
+	print_info(this->_nickname, false);
 	std::cout << std::endl;
 }
 
 void	Contact::show_everything()
 {
-	if (this->set == false)
+	if (this->_set == false)
 	{
 		std::cout << "Contact not setted yet" << std::endl;
 		return ;
 	}
-	std::cout << "Name -> " << this->name << std::endl;
-	std::cout << "Last name ->" << this->last_name << std::endl;
-	std::cout << "Nickname -> " << this->nickname << std::endl;
-	std::cout << "Number -> " << this->phone_nb << std::endl;
-	std::cout << "Dark secret -> " << this->dark_secret << std::endl;
+	std::cout << "Name -> " << this->_name << std::endl;
+	std::cout << "Last name ->" << this->_last_name << std::endl;
+	std::cout << "Nickname -> " << this->_nickname << std::endl;
+	std::cout << "Number -> " << this->_phone_nb << std::endl;
+	std::cout << "Dark secret -> " << this->_dark_secret << std::endl;
 }

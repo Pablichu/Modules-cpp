@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 23:55:51 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/05 18:53:35 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/08 12:36:42 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@
 class	Contact
 {
 	private:
-		bool set;
-		std::string	name;
-		std::string	last_name;
-		std::string	nickname;
-		std::string	phone_nb;
-		std::string	dark_secret;
+		bool _set;
+		std::string	_name;
+		std::string	_last_name;
+		std::string	_nickname;
+		std::string	_phone_nb;
+		std::string	_dark_secret;
 	
 	public:
 		Contact();
@@ -40,7 +40,7 @@ class	Contact
 class Telephone
 {
 	private:
-		int	pos;
+		int	_pos;
 	public:
 		Contact	contacts[8];
 		Telephone();
