@@ -1,6 +1,6 @@
 NAME	= Samsumg_Galaxy_Mini
 
-CC		= c++
+CC		= clang++
 FLAGS	= -Wall -Wextra -Werror
 RM		= rm
 

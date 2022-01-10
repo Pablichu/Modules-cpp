@@ -1,6 +1,6 @@
 NAME	= Your_goddam_program
 
-CC		= c++
+CC		= clang++
 FLAGS	= -Wall -Wextra -Werror
 RM		= rm
 

@@ -1,6 +1,6 @@
 NAME	= megaphone
 
-CC		= c++
+CC		= clang++
 FLAGS	= -Wall -Wextra -Werror
 RM		= rm
 

@@ -6,12 +6,12 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 23:55:51 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/08 12:36:42 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/10 17:58:00 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef telephonehpp
-#define telefphonehpp
+#ifndef telephone.hpp
+#define telephone.hpp
 
 #include <string>
 #include <iostream>
