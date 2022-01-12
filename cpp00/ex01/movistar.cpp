@@ -27,10 +27,10 @@ void	Telephone::add_contact()
 		this->_pos = 0;
 }
 
-bool isNumber(const std::string& str)
+bool isNumber(const std::string str)
 {
-    for (char const &c : str)
-        if (std::isdigit(c) == 0)
+    for (int i = 0; i < str.length(); i++)
+        if (std::isdigit(str[i]) == 0)
 			return false;
     return true;
 }
