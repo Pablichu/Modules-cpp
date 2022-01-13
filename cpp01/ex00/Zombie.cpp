@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   telephone.hpp                                      :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/21 23:55:51 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/13 18:13:58 by pmira-pe         ###   ########.fr       */
+/*   Created: 2022/01/13 19:00:05 by pmira-pe          #+#    #+#             */
+/*   Updated: 2022/01/13 20:34:36 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __TELEPHONE_H__
-#define __TELEPHONE_H__
+#include "Zombie.hpp"
 
-#include <string>
-#include <iostream>
-#include <iomanip>
-#include "Contact.hpp"
-
-class Telephone
+Zombie::Zombie(std::string zname)
 {
-	private:
-		int	_pos;
-	public:
-		Contact	contacts[8];
-		Telephone(void);
-		~Telephone(void);
+	this->_zname = zname;
+}
 
-		void	add_contact(void);
-		void	show_contacts(void);
-};
+Zombie::~Zombie()
+{
+	std::cout << "Zombie " << this->_zname << " says: IF NO BRAIN THEN GONE" << std::endl;
+}
 
-#endif
+void	Zombie::announce(void)
+{
+	std::cout << this->_zname << "  BraiiiiiiinnnzzzZ..." << std::endl;
+}

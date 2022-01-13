@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   telephone.hpp                                      :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/21 23:55:51 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/13 18:13:58 by pmira-pe         ###   ########.fr       */
+/*   Created: 2022/01/13 20:59:23 by pmira-pe          #+#    #+#             */
+/*   Updated: 2022/01/13 21:49:58 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __TELEPHONE_H__
-#define __TELEPHONE_H__
+#include "Zombie.hpp"
 
-#include <string>
-#include <iostream>
-#include <iomanip>
-#include "Contact.hpp"
-
-class Telephone
+Zombie* zombieHorde( int N, std::string name )
 {
-	private:
-		int	_pos;
-	public:
-		Contact	contacts[8];
-		Telephone(void);
-		~Telephone(void);
-
-		void	add_contact(void);
-		void	show_contacts(void);
-};
-
-#endif
+	Zombie	*horde = new Zombie[N];
+	for (size_t i = 0; i < N; i++)
+		horde[i].zom_name(name);
+	return horde;
+}

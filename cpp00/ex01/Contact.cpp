@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "telephone.hpp"
+#include "Contact.hpp"
 
 Contact::Contact()
 {

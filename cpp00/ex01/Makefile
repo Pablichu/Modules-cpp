@@ -4,9 +4,9 @@ CC		= clang++
 FLAGS	= -Wall -Wextra -Werror
 RM		= rm
 
-SRC		=	movistar.cpp \
-			vodafone.cpp \
-			orange.cpp
+SRC		=	Telephone.cpp \
+			Contact.cpp \
+			amena.cpp
 
 OBJS	=	$(SRC:.cpp=.o)
 

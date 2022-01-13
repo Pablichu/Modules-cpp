@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   telephone.hpp                                      :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/21 23:55:51 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/13 18:13:58 by pmira-pe         ###   ########.fr       */
+/*   Created: 2022/01/13 20:14:14 by pmira-pe          #+#    #+#             */
+/*   Updated: 2022/01/13 20:25:10 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __TELEPHONE_H__
-#define __TELEPHONE_H__
+#include "Zombie.hpp"
 
-#include <string>
-#include <iostream>
-#include <iomanip>
-#include "Contact.hpp"
+Zombie* newZombie( std::string name );
 
-class Telephone
+void randomChump( std::string name )
 {
-	private:
-		int	_pos;
-	public:
-		Contact	contacts[8];
-		Telephone(void);
-		~Telephone(void);
-
-		void	add_contact(void);
-		void	show_contacts(void);
-};
-
-#endif
+	Zombie	one(name);
+	one.announce();
+}
