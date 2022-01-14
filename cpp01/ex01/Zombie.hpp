@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 18:53:39 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/13 21:48:16 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/14 18:19:01 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ private:
 	std::string	_zname;
 
 public:
-	Zombie(std::string zname);
 	Zombie(void);
 	~Zombie();
 

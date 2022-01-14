@@ -1,4 +1,4 @@
-NAME	= le_string
+NAME	= humans_living_in_the_aftermath
 
 CC		= clang++
 FLAGS	= -Wall -Wextra -Werror
