@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 18:09:56 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/13 18:12:45 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/17 17:36:59 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ Telephone::~Telephone() {}
 
 void	Telephone::add_contact()
 {
-	contacts[this->_pos].add_contact();
-	this->_pos++;
+	if (contacts[this->_pos].add_contact())
+		this->_pos++;
 	if (this->_pos == 8)
 		this->_pos = 0;
 }
 
-bool isNumber(const std::string str)
+static bool isNumber(const std::string str)
 {
     for (int i = 0; i < str.length(); i++)
         if (std::isdigit(str[i]) == 0)

@@ -19,19 +19,32 @@ Contact::Contact()
 
 Contact::~Contact() {}
 
-void	Contact::add_contact()
+static bool isNumber(const std::string str)
 {
-	std::cout << "Insert contact name: " << std::endl << "> ";
+    for (int i = 0; i < str.length(); i++)
+        if (std::isdigit(str[i]) == 0)
+			return false;
+    return true;
+}
+
+bool	Contact::add_contact()
+{
+	std::cout << "Insert contact name > ";
 	std::getline(std::cin, this->_name);
-	std::cout << "Insert last name: " << std::endl << "> ";
+	std::cout << "Insert last name > ";
 	std::getline(std::cin, this->_last_name);
-	std::cout << "Insert nickname: " << std::endl << "> ";
+	std::cout << "Insert nickname > ";
 	std::getline(std::cin, this->_nickname);
-	std::cout << "Insert phone number: " << std::endl << "> ";
+	std::cout << "Insert phone number > ";
 	std::getline(std::cin, this->_phone_nb);
-	std::cout << "Insert... their dark secret... " << std::endl << "> ";
+	if (!isNumber(_phone_nb))
+	{
+		std::cout << std::endl << "Phone number must NOT contain anything than numbers. Try again -_-" << std::endl;
+		return false;
+	}
+	std::cout << "Insert... their dark secret > ";
 	std::getline(std::cin, this->_dark_secret);
-	this->_set = true;
+	return (this->_set = true);
 }
 
 bool	Contact::setted()
@@ -65,9 +78,9 @@ void	Contact::show_everything()
 		std::cout << "Contact not setted yet" << std::endl;
 		return ;
 	}
-	std::cout << "Name -> " << this->_name << std::endl;
-	std::cout << "Last name ->" << this->_last_name << std::endl;
-	std::cout << "Nickname -> " << this->_nickname << std::endl;
-	std::cout << "Number -> " << this->_phone_nb << std::endl;
+	std::cout << "Name        -> " << this->_name << std::endl;
+	std::cout << "Last name   -> " << this->_last_name << std::endl;
+	std::cout << "Nickname    -> " << this->_nickname << std::endl;
+	std::cout << "Number      -> " << this->_phone_nb << std::endl;
 	std::cout << "Dark secret -> " << this->_dark_secret << std::endl;
 }

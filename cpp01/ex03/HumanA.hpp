@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 19:32:43 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/14 20:49:35 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/17 21:01:59 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ class HumanA
 {
 private:
 	std::string	_name;
-	Weapon	_my_gun;
+	Weapon&	_my_gun;
 public:
-	HumanA(std::string hname, Weapon violence_tool);
+	HumanA(std::string hname, Weapon &violence_tool);
 	~HumanA();
 
 

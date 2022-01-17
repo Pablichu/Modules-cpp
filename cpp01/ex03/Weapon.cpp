@@ -6,13 +6,13 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 19:25:32 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/14 20:33:41 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/17 21:02:29 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-Weapon::Weapon(std::string name) : type(name){}
+Weapon::Weapon(std::string name) : type(name), typeREF(type){}
 
 Weapon::~Weapon(){}
 
@@ -21,7 +21,7 @@ void	Weapon::setType(std::string name)
 	this->type = name;
 }
 
-const std::string*	Weapon::getType(void) const
+std::string const&	Weapon::getType(void)
 {
-	return (&this->type);
+	return this->typeREF;
 }

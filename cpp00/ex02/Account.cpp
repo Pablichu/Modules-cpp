@@ -106,7 +106,6 @@ void	Account::makeDeposit(int deposit)
 
 bool	Account::makeWithdrawal(int withdrawal)
 {
-	//[19920104_091532] index:5;p_amount:23;withdrawal:refused
 	_displayTimestamp();
 	std::cout << "index:" << t::_accountIndex << ";p_amount:" << t::_amount;
 	if ((t::_amount - withdrawal) < 0)

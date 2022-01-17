@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   telephone.hpp                                      :+:      :+:    :+:   */
+/*   Telephone.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 23:55:51 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/13 18:13:58 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/17 17:19:26 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class Telephone
 {
 	private:
 		int	_pos;
-	public:
 		Contact	contacts[8];
+	public:
 		Telephone(void);
 		~Telephone(void);
 

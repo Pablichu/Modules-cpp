@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 19:22:14 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/14 20:49:23 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/17 20:47:31 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@ class Weapon
 {
 private:
 	std::string	type;
+	std::string&	typeREF;
 public:
 	Weapon(std::string name);
 	~Weapon();
 
 	void	setType(std::string name);
-	const std::string*	getType(void) const;
+	std::string const&	getType(void);
 };
