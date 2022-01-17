@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 00:17:01 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/17 21:32:04 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/17 21:35:37 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ int	main(int argi, char **argv)
 				in_content.insert(found, str2);
 			}
 		}
-		std::cout << in_content << std::endl;
 		out_file << in_content << std::endl;
 	} while (!in_file.eof());
 	in_file.close();
