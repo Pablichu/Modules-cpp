@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 00:17:01 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/17 21:35:37 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/17 21:53:38 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argi, char **argv)
 	in_content.insert(in_content.length(), ".replace");
 	std::ofstream	out_file(in_content);
 
-	do
+	while (true)
 	{
 		std::getline(in_file, in_content);
 		while (1)
@@ -51,8 +51,11 @@ int	main(int argi, char **argv)
 				in_content.insert(found, str2);
 			}
 		}
-		out_file << in_content << std::endl;
-	} while (!in_file.eof());
+		if (!in_file.eof())
+			out_file << in_content << std::endl;
+		else
+			out_file << in_content;
+	}
 	in_file.close();
 	out_file.close();
 	return 0;
