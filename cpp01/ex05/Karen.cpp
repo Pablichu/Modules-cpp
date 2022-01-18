@@ -14,6 +14,16 @@
 
 Karen::Karen(void)
 {
+	this->_mode[0] = "debug";
+	this->_mode[1] = "info";
+	this->_mode[2] = "warning";
+	this->_mode[3] = "error";
+	
+	this->fPTR[0] = &Karen::debug;
+	this->fPTR[1] = &Karen::info;
+	this->fPTR[2] = &Karen::warning;
+	this->fPTR[3] = &Karen::error;
+	
 	std::cout << "Ooh noo she is back. I REPEAT: SHE IS BACK!" << std::endl;
 }
 
@@ -24,8 +34,15 @@ Karen::~Karen()
 
 void	Karen::complain(std::string level)
 {
-	std::cout << level << std::endl;
-	void	(Karen::*level(void))(void); //this does not work
+	size_t	i = 0;
+
+	while (i < 4)
+	{
+		if (this->_mode[i].compare(level))
+			break ;
+		i++;
+	}
+	(this->*fPTR[i])();
 }
 
 void	Karen::debug(void)

@@ -17,12 +17,15 @@
 class Karen
 {
 private:
+	std::string	_mode[4];
+	void	(Karen::*fPTR[4])(void);
+
 	void	debug(void);
 	void	info(void);
 	void	warning(void);
 	void	error(void);
 public:
-	Karen(/* args */);
+	Karen();
 	~Karen();
 
 	void	complain(std::string level);
