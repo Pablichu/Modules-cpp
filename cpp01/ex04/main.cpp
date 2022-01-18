@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 00:17:01 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/17 21:53:38 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/18 00:09:07 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,10 @@ int	main(int argi, char **argv)
 		if (!in_file.eof())
 			out_file << in_content << std::endl;
 		else
+		{
 			out_file << in_content;
+			break ;
+		}
 	}
 	in_file.close();
 	out_file.close();
