@@ -1,10 +1,11 @@
-NAME	= replace
+NAME	= karenFilter
 
 CC		= clang++
 FLAGS	= -Wall -Wextra -Werror
 RM		= rm -f
 
-SRC		=	main.cpp
+SRC		=	main.cpp \
+			Karen.cpp
 
 OBJS	=	$(SRC:.cpp=.o)
 

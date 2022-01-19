@@ -2,7 +2,7 @@ NAME	= humans_living_in_the_aftermath
 
 CC		= clang++
 FLAGS	= -Wall -Wextra -Werror
-RM		= rm
+RM		= rm -f
 
 SRC		=	main.cpp \
 			Weapon.cpp \

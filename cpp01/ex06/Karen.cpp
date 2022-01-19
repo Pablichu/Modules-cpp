@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 01:26:47 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/18 19:41:19 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/18 19:38:36 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,18 @@
 
 Karen::Karen(void)
 {
-	this->_mode[0] = "debug";
-	this->_mode[1] = "info";
-	this->_mode[2] = "warning";
-	this->_mode[3] = "error";
+	this->_mode[0] = "DEBUG";
+	this->_mode[1] = "INFO";
+	this->_mode[2] = "WARNING";
+	this->_mode[3] = "ERROR";
 	
 	this->fPTR[0] = &Karen::debug;
 	this->fPTR[1] = &Karen::info;
 	this->fPTR[2] = &Karen::warning;
 	this->fPTR[3] = &Karen::error;
-	
-	std::cout << "Ooh noo she is back. I REPEAT: SHE IS BACK!" << std::endl;
 }
 
-Karen::~Karen()
-{
-	std::cout << "Finally she is gone! :D" << std::endl;
-}
+Karen::~Karen(){}
 
 void	Karen::complain(std::string level)
 {
@@ -42,7 +37,24 @@ void	Karen::complain(std::string level)
 			break ;
 		i++;
 	}
-	(this->*fPTR[i])();
+	switch (i)
+	{
+		case 0:
+			(this->*fPTR[i])();
+			i++;
+		case 1:
+			(this->*fPTR[i])();
+			i++;
+		case 2:
+			(this->*fPTR[i])();
+			i++;
+		case 3:
+			(this->*fPTR[i])();
+			break;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl << std::endl;
+			break;
+	}
 }
 
 void	Karen::debug(void)

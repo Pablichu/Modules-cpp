@@ -2,7 +2,7 @@ NAME	= Your_goddam_program
 
 CC		= clang++
 FLAGS	= -Wall -Wextra -Werror
-RM		= rm
+RM		= rm -f
 
 SRC		=	test.cpp	\
 			Account.cpp

@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 01:30:54 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/18 01:30:54 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/18 19:42:29 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,17 @@ int	main()
 	bad_time.complain("debug");
 
 	std::cout << std::endl << " > Second step is Info mode. Karen will eventually angry" << std::endl
-			  << "   about anything. Just do not mind her." << std::endl;
+			  << "   about anything. Just do not mind her." << std::endl << std::endl;
 	//std::sleep(5);
 	bad_time.complain("info");
 
 	std::cout << std::endl << " > Third step is Warning mode and before you ask, yes, this" << std::endl
-			  << "   software was actually developed only for Karen. Now deal with her." << std::endl;
+			  << "   software was actually developed only for Karen. Now deal with her." << std::endl << std::endl;
 	//std::sleep(5);
 	bad_time.complain("warning");
 
 	std::cout << std::endl << " > Last step: Error mode. It does not matter what you did or did not." << std::endl
-			  << "   Karen always, and yes, always, will be dissapointed. No matter what" << std::endl;
+			  << "   Karen always, and yes, always, will be dissapointed. No matter what" << std::endl << std::endl;
 	//std::sleep(5);
 	bad_time.complain("error");
 

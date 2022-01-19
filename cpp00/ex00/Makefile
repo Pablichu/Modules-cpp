@@ -2,7 +2,7 @@ NAME	= megaphone
 
 CC		= clang++
 FLAGS	= -Wall -Wextra -Werror
-RM		= rm
+RM		= rm -f
 
 SRC		= megaphone.cpp
 

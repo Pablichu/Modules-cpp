@@ -1,8 +1,8 @@
-NAME	= Good_day
+NAME	= good_day
 
 CC		= clang++
 FLAGS	= -Wall -Wextra -Werror
-RM		= rm
+RM		= rm -f
 
 SRC		=	main.cpp \
 			Karen.cpp

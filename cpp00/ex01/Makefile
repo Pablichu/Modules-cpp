@@ -2,7 +2,7 @@ NAME	= Samsumg_Galaxy_Mini
 
 CC		= clang++
 FLAGS	= -Wall -Wextra -Werror
-RM		= rm
+RM		= rm -f
 
 SRC		=	Telephone.cpp \
 			Contact.cpp \

@@ -2,7 +2,7 @@ NAME	= Zombie_cabron
 
 CC		= clang++
 FLAGS	= -Wall -Wextra -Werror
-RM		= rm
+RM		= rm -f
 
 SRC		=	main.cpp \
 			Zombie.cpp \
