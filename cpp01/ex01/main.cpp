@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 20:59:26 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/14 18:18:03 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/19 19:52:54 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,9 @@ int main(int argi, char **argc)
 	Zombie	*horde = zombieHorde(horde_nb, "Bob");
 	for (size_t i = 0; i < horde_nb; i++)
 	{
-		std::cout << " " << i << " ";
+		std::cout << " " << i + 1 << " ";
 		horde[i].announce();
 	}
+	std::cout << std::endl;
 	delete [] horde;
 }

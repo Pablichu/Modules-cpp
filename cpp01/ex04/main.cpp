@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 00:17:01 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/18 00:09:07 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/19 19:42:47 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,16 @@ int	main(int argi, char **argv)
 		std::cout << "Cannot access the file" << std::endl;
 		return 0;
 	}
-	
+
 	in_content.insert(in_content.length(), ".replace");
 	std::ofstream	out_file(in_content);
 
+	if (str1 == str2)
+		str1.clear();
 	while (true)
 	{
 		std::getline(in_file, in_content);
-		while (1)
+		while (!str1.empty())
 		{
 			found = in_content.find(str1);
 			if (found == std::string::npos)
