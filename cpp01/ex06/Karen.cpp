@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 01:26:47 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/18 19:38:36 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/20 21:11:18 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,13 @@ void	Karen::complain(std::string level)
 	switch (i)
 	{
 		case 0:
-			(this->*fPTR[i])();
-			i++;
+			(this->*fPTR[0])();
 		case 1:
-			(this->*fPTR[i])();
-			i++;
+			(this->*fPTR[1])();
 		case 2:
-			(this->*fPTR[i])();
-			i++;
+			(this->*fPTR[2])();
 		case 3:
-			(this->*fPTR[i])();
+			(this->*fPTR[3])();
 			break;
 		default:
 			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl << std::endl;

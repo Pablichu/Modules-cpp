@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 20:17:58 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/19 19:49:27 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/20 18:54:02 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main(int argi, char **argc)
 		std::cout << "If no one no zombies" << std::endl;
 		return (0);
 	}
+
 	argi--;
 	argc++;
 	std::cout << " >> This has been done without new" << std::endl;
