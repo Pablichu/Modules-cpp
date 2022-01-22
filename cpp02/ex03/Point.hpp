@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/18 21:07:17 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/21 23:50:37 by pmira-pe         ###   ########.fr       */
+/*   Created: 2022/01/22 17:04:05 by pmira-pe          #+#    #+#             */
+/*   Updated: 2022/01/22 17:58:10 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#pragma once
 
-class Fixed
+#include "Fixed.hpp"
+
+class Point
 {
 private:
-	int					_value;
-	static int const	_FBIT;
+	Fixed	_x;
+	Fixed	_y;
 
 public:
-	Fixed(void);							//canonical
-	Fixed(Fixed const &src);				//canonical
-	~Fixed(void);							//canonical
+	Point(void);							//canonical
+	Point(float const fx, float const fy);
+	Point(Point const &src);				//canonical
+	~Point(void);							//canonical
 
-	Fixed	&operator=(Fixed const &rhs);	//canonical
+	Fixed	getx(void) const;
+	Fixed	gety(void) const;
 
-	int		getRawBits(void) const;
-	void	setRawBits(int const raw);
+	Point	&operator=(Point const &rhs);	//canonical
+
+	Point	operator-(Point const &rhs) const;
 };

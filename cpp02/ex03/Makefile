@@ -5,7 +5,9 @@ FLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic
 RM		= rm -f
 
 SRC		=	main.cpp \
-			Fixed.cpp
+			Fixed.cpp \
+			Point.cpp \
+			bsp.cpp
 
 OBJS	=	$(SRC:.cpp=.o)
 
