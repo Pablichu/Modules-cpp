@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.hpp                                          :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/22 17:04:05 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/24 17:21:30 by pmira-pe         ###   ########.fr       */
+/*   Created: 2022/01/24 17:58:44 by pmira-pe          #+#    #+#             */
+/*   Updated: 2022/01/24 18:02:29 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include <iostream>
 
-#include "Fixed.hpp"
-
-class Point
+class ClapTrap
 {
 private:
-	Fixed	_x;
-	Fixed	_y;
+	std::string	_Name;
+	int			_Hitpoints;
+	int			_Energy_points;
+	int			_attack_damage;
 
 public:
-	Point(void);							//canonical
-	Point(float const fx, float const fy);
-	Point(Point const &src);				//canonical
-	~Point(void);							//canonical
+	ClapTrap(void);
+	~ClapTrap();
 
-	Fixed	getx(void) const;
-	Fixed	gety(void) const;
-
-	Point	&operator=(Point const &rhs);	//canonical
-
-	Point	operator-(Point const &rhs) const;
+	void	attack(std::string const &target);
+	void	takeDamege(unsigned int amount);
+	void	beRepaired(unsigned int amount);
 };
-
-std::ostream &	operator<<(std::ostream &out, Point const &rhs);

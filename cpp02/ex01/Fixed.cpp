@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 21:07:01 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/22 00:32:02 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/24 16:51:02 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ Fixed &Fixed::operator=(Fixed const &rhs)
 
 int		Fixed::getRawBits(void) const
 {
-	std::cout << " > Getting raw bits!" << std::endl;
+	//std::cout << " > Getting raw bits!" << std::endl;
 	return (this->_value);
 }
 

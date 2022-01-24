@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 21:07:01 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/22 16:55:22 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/24 17:28:15 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,38 +15,21 @@
 
 const int Fixed::_FBIT = 8;
 
-Fixed::Fixed(void)
-{
-	//std::cout << " > Default constructor called!" << std::endl;
-	this->_value = 0;
-}
+Fixed::Fixed(void) : _value(0) {}
 
-Fixed::Fixed(const int nb)
-{
-	//std::cout << " > Integer constructor called!" << std::endl;
-	this->_value = nb << _FBIT;
-}
+Fixed::Fixed(const int nb) : _value(nb << _FBIT) {}
 
-Fixed::Fixed(const float nb)
-{
-	//std::cout << " > Float constructor called!" << std::endl;
-	this->_value = roundf(nb * (1 << _FBIT));
-}
+Fixed::Fixed(const float nb) : _value(roundf(nb * (1 << _FBIT))) {}
 
 Fixed::Fixed(Fixed const &src)
 {
-	//std::cout << " > Copy constructor called!" << std::endl;
 	*this = src;
 }
 
-Fixed::~Fixed(void)
-{
-	//std::cout << " > Destructor called!" << std::endl;
-}
+Fixed::~Fixed(void) {}
 
 Fixed &Fixed::operator=(Fixed const &rhs)
 {
-	//std::cout << " > Assignation operator called!" << std::endl;
 	if (this != &rhs)
 		this->_value = rhs.getRawBits();
 	return (*this);
@@ -54,13 +37,11 @@ Fixed &Fixed::operator=(Fixed const &rhs)
 
 int		Fixed::getRawBits(void) const
 {
-	//std::cout << " > Getting raw bits!" << std::endl;
 	return (this->_value);
 }
 
 void	Fixed::setRawBits(int const raw)
 {
-	//std::cout << " > Setting raw bits!" << std::endl;
 	this->_value = raw;
 }
 
@@ -151,7 +132,6 @@ Fixed	Fixed::operator++(int)
 {
 	Fixed	temp(*this);
 
-	//std::cout << *this;
 	this->_value += 1;
 	return (temp);
 }

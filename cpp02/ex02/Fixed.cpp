@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 21:07:01 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/22 16:55:22 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/24 17:25:28 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,19 @@
 
 const int Fixed::_FBIT = 8;
 
-Fixed::Fixed(void)
+Fixed::Fixed(void) : _value(0)
 {
 	//std::cout << " > Default constructor called!" << std::endl;
-	this->_value = 0;
 }
 
-Fixed::Fixed(const int nb)
+Fixed::Fixed(const int nb) : _value(nb << _FBIT)
 {
 	//std::cout << " > Integer constructor called!" << std::endl;
-	this->_value = nb << _FBIT;
 }
 
-Fixed::Fixed(const float nb)
+Fixed::Fixed(const float nb) : _value(roundf(nb * (1 << _FBIT)))
 {
 	//std::cout << " > Float constructor called!" << std::endl;
-	this->_value = roundf(nb * (1 << _FBIT));
 }
 
 Fixed::Fixed(Fixed const &src)
@@ -151,7 +148,6 @@ Fixed	Fixed::operator++(int)
 {
 	Fixed	temp(*this);
 
-	//std::cout << *this;
 	this->_value += 1;
 	return (temp);
 }

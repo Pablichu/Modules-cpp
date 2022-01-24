@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 17:15:38 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/22 20:48:08 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/24 17:47:59 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 Fixed	sign(Point p1, Point p2, Point p3)
 {
-    return (p1.getx() - p3.getx()) * (p2.gety() - p3.gety()) - (p2.getx() - p3.getx()) * (p1.gety() - p3.gety());
+    return (p1.getx() - p3.getx())
+			* (p2.gety() - p3.gety()) - (p2.getx() - p3.getx())
+			* (p1.gety() - p3.gety());
 }
 
 bool bsp( Point const a, Point const b, Point const c, Point const point)
@@ -24,9 +26,11 @@ bool bsp( Point const a, Point const b, Point const c, Point const point)
 	Fixed	d3(sign(point, c, a));
     bool has_neg, has_pos;
 
+	if (d1 == Fixed(0) || d2 == Fixed(0) || d3 == Fixed(0))
+		return false;
     has_neg = (d1 < Fixed()) || (d2 < Fixed()) || (d3 < Fixed());
     has_pos = (d1 > Fixed()) || (d2 > Fixed()) || (d3 > Fixed());
-
+	//std::cout << d1 << "  " << d2 << "  " << d3 << std::endl;
     return !(has_neg && has_pos);
 }
 

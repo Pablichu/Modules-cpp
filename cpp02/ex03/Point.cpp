@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 17:06:40 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/22 19:48:51 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/24 17:24:19 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,10 @@ Point	&Point::operator=(Point const &rhs)
 Point	Point::operator-(Point const &rhs) const
 {
 	return (Point((this->_x - rhs.getx()).toFloat(), (this->_y - rhs.gety()).toFloat()));
+}
+
+std::ostream &	operator<<(std::ostream &out, Point const &rhs)
+{
+	out << "x = " << rhs.getx().toFloat() << "  |  y = " << rhs.gety().toFloat();
+	return out;
 }
