@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 17:58:44 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/25 20:13:49 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/25 20:25:43 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 class ClapTrap
 {
-private:
+protected:
 	std::string		_name;
 	int unsigned	_hitpoints;
 	int unsigned	_energy_points;

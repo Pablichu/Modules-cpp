@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 17:59:14 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/25 20:26:04 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/25 20:40:40 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	ClapTrap::attack(std::string const &target)
 
 void	ClapTrap::takeDamege(unsigned int amount)
 {
-	std::cout << " > " << this->_name << " recieve " << amount << " damage" << std::endl;
+	std::cout << "Clap trap " << this->_name << " recieve " << amount << " damage" << std::endl;
 	this->_hitpoints -= amount;
 }
 

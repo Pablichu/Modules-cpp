@@ -6,32 +6,34 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 17:41:06 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/25 17:51:21 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/25 20:45:49 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main(void)
 {
 	ClapTrap	a_trap("rat trap");
-	ClapTrap	a_big_trap("bucket up of door");
+	ClapTrap	a_big_trap("electrocutter");
 	std::string	bro("Paco");
-	std::string	house_partner("Javi");
+	std::string	homie("Javi");
 
-	std::cout << bro << " were going to the kitchen to have some dinner. But suddenly..." << std::endl;
-	std::cin.ignore();
-	a_trap.attack(bro);
-	a_big_trap.attack(bro);
+	std::cout << "The clap traps were not enought to stop " << bro << " from getting dinner."  << std::endl
+			  << homie << " has made a deccision." << std::endl;
 
 	std::cin.ignore();
-	std::cout << bro << " is upset so he strikes back!" << std::endl;
-	a_trap.takeDamege(7);
-	a_big_trap.takeDamege(4);
+	std::cout << "But " << bro << " kept attacking this traps so..." << std::endl;
+	ScavTrap	bigger("bucket up of door");
+	std::cout << homie << " strikes back for blood!" << std::endl;
 
 	std::cin.ignore();
-	std::cout << "But all this traps belongs to " << house_partner << " and after " << bro
-			  << " mess, he decides to repair his traps." << std::endl;
-	a_trap.beRepaired(5);
-	a_big_trap.beRepaired(2);
+	bigger.guardGate();
+	bigger.attack(bro);
+	std::cout << "This trap was much worst than the last ones. " << bro << " was having a bad time." << std::endl;
+	bigger.takeDamege(25);
+
+	std::cin.ignore();
+	std::cout << homie << " was suprised that " << bro << " didn't get the message. Now " << homie << " is in a war!" << std::endl;
+	bigger.beRepaired(17);
 }
