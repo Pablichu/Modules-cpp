@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 17:41:06 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/25 20:45:49 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/27 21:44:23 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 int	main(void)
 {
-	ClapTrap	a_trap("rat trap");
-	ClapTrap	a_big_trap("electrocutter");
 	std::string	bro("Paco");
 	std::string	homie("Javi");
 

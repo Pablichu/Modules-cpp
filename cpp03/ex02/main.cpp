@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 17:41:06 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/27 21:07:15 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/27 21:44:36 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 int	main(void)
 {
-	ClapTrap	a_trap("rat trap");
-	ScavTrap	b_trap("bucket full of water up of door");
 	std::string	bro("Paco");
 	std::string	homie("Javi");
 
