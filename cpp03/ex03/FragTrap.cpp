@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 13:40:00 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/27 13:40:00 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/27 20:15:06 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ FragTrap::FragTrap()
 {
 	*this = FragTrap("generic trap");
 }
-FragTrap::FragTrap(std::string name) : FragTrap(name)
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "Frag trap is now operative." << std::endl;
 	this->_hitpoints = 100;

@@ -1,4 +1,4 @@
-NAME	= more_traps
+NAME	= definitive
 
 CC		= clang++
 FLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic -Wshadow -Wno-shadow
