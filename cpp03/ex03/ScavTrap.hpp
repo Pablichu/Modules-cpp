@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/27 13:37:14 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/27 13:37:14 by pmira-pe         ###   ########.fr       */
+/*   Created: 2022/01/25 18:07:32 by pmira-pe          #+#    #+#             */
+/*   Updated: 2022/01/25 20:31:51 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class ScavTrap : public ClapTrap
 {
+private:
+	bool	_keeper_mode;
 public:
-	FragTrap(void);
-	FragTrap(std::string name);
-	FragTrap(FragTrap const &src);
-	~FragTrap();
+	ScavTrap(void);
+	ScavTrap(std::string name);
+	ScavTrap(ScavTrap const &src);
+	~ScavTrap();
 
-	FragTrap	&operator=(FragTrap const &src);
+	ScavTrap	&operator=(ScavTrap const &src);
 
-	void		highFivesGuys(void);
+	void	guardGate(void);
 };

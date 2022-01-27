@@ -1,26 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/27 13:37:14 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/27 13:37:14 by pmira-pe         ###   ########.fr       */
+/*   Created: 2022/01/27 14:01:04 by pmira-pe          #+#    #+#             */
+/*   Updated: 2022/01/27 14:01:04 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "DiamondTrap.hpp"
 
-class FragTrap : public ClapTrap
+DiamondTrap::DiamondTrap(void)
 {
-public:
-	FragTrap(void);
-	FragTrap(std::string name);
-	FragTrap(FragTrap const &src);
-	~FragTrap();
+}
 
-	FragTrap	&operator=(FragTrap const &src);
+DiamondTrap::DiamondTrap(std::string name)
+{
 
-	void		highFivesGuys(void);
-};
+}
+
+DiamondTrap::DiamondTrap(DiamondTrap const &src)
+{
+
+}
+
+DiamondTrap::~DiamondTrap(void)
+{
+	std::cout << "Diamond trap finished his work! Time to get going." << std::endl;
+}
+
+DiamondTrap	&DiamondTrap::operator=(DiamondTrap const &src)
+{
+
+}
+
+void	whoAmI()
+{
+
+}

@@ -1,13 +1,14 @@
 NAME	= more_traps
 
 CC		= clang++
-FLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic
+FLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic -Wshadow -Wno-shadow
 RM		= rm -f
 
 SRC		=	main.cpp \
 			ClapTrap.cpp \
 			ScavTrap.cpp \
-			FragTrap.cpp
+			FragTrap.cpp \
+			DiamondTrap.cpp
 
 OBJS	=	$(SRC:.cpp=.o)
 

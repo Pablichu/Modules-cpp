@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/27 13:37:14 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/27 13:37:14 by pmira-pe         ###   ########.fr       */
+/*   Created: 2022/01/27 13:59:41 by pmira-pe          #+#    #+#             */
+/*   Updated: 2022/01/27 13:59:41 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-class FragTrap : public ClapTrap
+class DiamondTrap
 {
+private:
+	std::string	_name;
 public:
-	FragTrap(void);
-	FragTrap(std::string name);
-	FragTrap(FragTrap const &src);
-	~FragTrap();
+	DiamondTrap(void);
+	DiamondTrap(std::string name);
+	DiamondTrap(DiamondTrap const &src);
+	~DiamondTrap(void);
 
-	FragTrap	&operator=(FragTrap const &src);
+	DiamondTrap	&operator=(DiamondTrap const &src);
 
-	void		highFivesGuys(void);
+	void	whoAmI();
 };
