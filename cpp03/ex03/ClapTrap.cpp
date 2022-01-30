@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 17:59:14 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/25 20:40:40 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/30 20:26:15 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,11 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	std::cout << "Clap trap " << this->_name << " was repaired gaining " << amount << " " << std::endl;
 	this->_hitpoints += amount;
+}
+
+std::ostream	&operator<<(std::ostream &out, ClapTrap const &src)
+{
+	out << "ClapTrap>>Name:" << src.get_name() << "|Hitpoint:" << src.get_hitpoints()
+		<< "|En_attack:" << src.get_energy() << "|Attack_dm:" << src.get_attackdm() << std::endl;
+	return out;
 }

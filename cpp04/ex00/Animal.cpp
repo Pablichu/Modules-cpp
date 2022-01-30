@@ -1,30 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/25 18:07:32 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/30 20:28:24 by pmira-pe         ###   ########.fr       */
+/*   Created: 2022/01/30 20:51:54 by pmira-pe          #+#    #+#             */
+/*   Updated: 2022/01/30 21:16:54 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "Animal.hpp"
 
-class ScavTrap : public ClapTrap
+Animal::Animal(void)
 {
-private:
-	bool	_keeper_mode;
-public:
-	ScavTrap(void);
-	ScavTrap(std::string name);
-	ScavTrap(ScavTrap const &src);
-	~ScavTrap();
+}
 
-	ScavTrap	&operator=(ScavTrap const &src);
+Animal::Animal(std::string type) : _type(type)
+{
 
-	void	guardGate(void);
-};
+}
 
-std::ostream	&operator<<(std::ostream &out, ScavTrap const &src);
+Animal::Animal(Animal const &src)
+{
+	
+}
+
+Animal::~Animal()
+{
+}
+
+Animal	&Animal::operator=(Animal const &src)
+{
+
+}
+
+std::string	Animal::get_type(void) const
+{
+
+}

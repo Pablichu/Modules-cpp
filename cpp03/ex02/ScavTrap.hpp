@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 18:07:32 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/27 21:07:00 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/30 20:28:19 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,5 @@ public:
 
 	void	guardGate(void);
 };
+
+std::ostream	&operator<<(std::ostream &out, ScavTrap const &src);

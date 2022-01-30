@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 18:08:00 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/25 20:34:38 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/30 20:41:29 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,11 @@ void	ScavTrap::guardGate(void)
 	}
 	else
 		std::cout << this->_name << " is already in guard keeper mode." << std::endl;
+}
+
+std::ostream	&operator<<(std::ostream &out, ScavTrap const &src)
+{
+	out << "ScavTrap>>Name:" << src.get_name() << "|Hitpoint:" << src.get_hitpoints()
+		<< "|En_attack:" << src.get_energy() << "|Attack_dm:" << src.get_attackdm() << std::endl;
+	return out;
 }

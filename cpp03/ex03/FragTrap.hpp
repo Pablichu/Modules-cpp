@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 13:37:14 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/27 21:09:59 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/30 20:29:49 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,5 @@ public:
 
 	void		highFivesGuys(void);
 };
+
+std::ostream	&operator<<(std::ostream &out, FragTrap const &src);

@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 13:40:00 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/27 20:15:06 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/30 20:41:39 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,11 @@ FragTrap	&FragTrap::operator=(FragTrap const &src)
 void	FragTrap::highFivesGuys(void)
 {
 	std::cout << this->_name << " asks to gently high five! Do you accept?" << std::endl;
+}
+
+std::ostream	&operator<<(std::ostream &out, FragTrap const &src)
+{
+	out << "FragTrap>>Name:" << src.get_name() << "|Hitpoint:" << src.get_hitpoints()
+		<< "|En_attack:" << src.get_energy() << "|Attack_dm:" << src.get_attackdm() << std::endl;
+	return out;
 }

@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/25 18:07:32 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/30 20:28:24 by pmira-pe         ###   ########.fr       */
+/*   Created: 2022/01/30 21:03:50 by pmira-pe          #+#    #+#             */
+/*   Updated: 2022/01/30 21:04:06 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#pragma once
 
-class ScavTrap : public ClapTrap
+#include "Animal.hpp"
+
+class Dog
 {
 private:
-	bool	_keeper_mode;
+	/* data */
 public:
-	ScavTrap(void);
-	ScavTrap(std::string name);
-	ScavTrap(ScavTrap const &src);
-	~ScavTrap();
-
-	ScavTrap	&operator=(ScavTrap const &src);
-
-	void	guardGate(void);
+	Dog(/* args */);
+	~Dog();
 };
 
-std::ostream	&operator<<(std::ostream &out, ScavTrap const &src);
+Dog::Dog(/* args */)
+{
+}
+
+Dog::~Dog()
+{
+}
