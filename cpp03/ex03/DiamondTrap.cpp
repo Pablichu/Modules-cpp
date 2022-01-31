@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 14:01:04 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/30 20:39:05 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/31 21:17:24 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ DiamondTrap::DiamondTrap(void)
 
 DiamondTrap::DiamondTrap(std::string name) : _name(name), ScavTrap(name + "_clap_name"), FragTrap(name + "_clap_name")
 {
-	std::cout << "This time this is serious. A diamond trap has been setted!" << std::endl;
+	std::cout << " > This time this is serious. A diamond trap has been setted!" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(DiamondTrap const &src)
@@ -29,7 +29,7 @@ DiamondTrap::DiamondTrap(DiamondTrap const &src)
 
 DiamondTrap::~DiamondTrap(void)
 {
-	std::cout << "Diamond trap finished his work! Time to get going." << std::endl;
+	std::cout << " > Diamond trap finished his work! Time to get going." << std::endl;
 }
 
 DiamondTrap	&DiamondTrap::operator=(DiamondTrap const &src)
@@ -53,8 +53,8 @@ void		DiamondTrap::attack(std::string const & target)
 
 void		DiamondTrap::whoAmI()
 {
-	std::cout << "So you are asking about me, aren't you? Well, I am " << this->_name << "." << std::endl
-			  << "But you could also know me as " << this->ScavTrap::get_name() << std::endl;
+	std::cout << " > So you are asking about me, aren't you? Well, I am " << this->_name << "." << std::endl
+			  << "   But you could also know me as " << this->ScavTrap::get_name() << std::endl;
 }
 
 std::string	DiamondTrap::get_name() const

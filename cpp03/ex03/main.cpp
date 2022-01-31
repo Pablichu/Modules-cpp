@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 17:41:06 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/27 21:21:53 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/31 19:38:13 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,7 @@ int	main(void)
 
 	std::cin.ignore();
 	std::cout << homie << " won this battle but not the war." << std::endl;
+
+	std::cout << std::endl << "Before destructors, let's check the values:" << std::endl
+			  << perfection << std::endl;
 }

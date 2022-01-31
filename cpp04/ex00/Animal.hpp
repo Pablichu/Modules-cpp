@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 20:50:55 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/30 21:22:09 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/31 22:04:26 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ public:
 
 	Animal	&operator=(Animal const &src);
 
-	std::string	get_type(void) const;
+	std::string			getType(void) const;
+	virtual void		makeSound(void) const;
 };
 
 

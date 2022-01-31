@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:05:22 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/30 21:06:17 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/31 22:04:14 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,14 @@
 
 #include "Animal.hpp"
 
-class Cat
+class Cat : public Animal
 {
-private:
-	/* data */
 public:
-	Cat(/* args */);
-	~Cat();
+	Cat(void);
+	Cat(Cat const &src);
+	~Cat(void);
+
+	Cat	&operator=(Cat const &src);
+
+	virtual void		makeSound(void) const;
 };
-
-Cat::Cat(/* args */)
-{
-}
-
-Cat::~Cat()
-{
-}

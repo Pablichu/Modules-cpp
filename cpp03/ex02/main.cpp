@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 17:41:06 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/27 21:44:36 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/31 19:38:31 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,7 @@ int	main(void)
 	std::cout << "This time " << bro << " was going serious" << std::endl;
 	bigger.beRepaired(17);
 	std::cout << homie << " has to go harder this time. Maybe The Trap..." << std::endl;
+
+	std::cout << std::endl << "Before destructors, let's check the values:" << std::endl
+			  << bigger << std::endl;
 }

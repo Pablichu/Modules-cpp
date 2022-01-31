@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 18:08:00 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/30 20:42:12 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/31 21:03:33 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ScavTrap::ScavTrap(void)
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name), _keeper_mode(false)
 {
-	std::cout << "Scav trap has been setted!" << std::endl;
+	std::cout << " > Scav trap has been setted!" << std::endl;
 	this->_hitpoints = 100;
 	this->_energy_points = 50;
 	this->_attack_damage = 20;
@@ -35,7 +35,7 @@ ScavTrap::ScavTrap(ScavTrap const &src)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "A scav trap has been compromised so now it is in the garbage." << std::endl;
+	std::cout << " > A scav trap has been compromised so now it is in the garbage." << std::endl;
 }
 
 ScavTrap	&ScavTrap::operator=(ScavTrap const &src)
@@ -51,11 +51,11 @@ void	ScavTrap::guardGate(void)
 {
 	if (!this->_keeper_mode)
 	{
-		std::cout << this->_name << " has entered in guard keeper mode." << std::endl;
+		std::cout << " > " << this->_name << " has entered in guard keeper mode." << std::endl;
 		this->_keeper_mode = true;
 	}
 	else
-		std::cout << this->_name << " is already in guard keeper mode." << std::endl;
+		std::cout << " > " << this->_name << " is already in guard keeper mode." << std::endl;
 }
 
 std::ostream	&operator<<(std::ostream &out, ScavTrap const &src)

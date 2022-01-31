@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 17:41:06 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/27 21:44:23 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/31 19:38:00 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,7 @@ int	main(void)
 	std::cin.ignore();
 	std::cout << homie << " was suprised that " << bro << " didn't get the message. Now " << homie << " is in a war!" << std::endl;
 	bigger.beRepaired(17);
+
+	std::cout << std::endl << "Before destructors, let's check the values:" << std::endl
+			  << bigger << std::endl;
 }

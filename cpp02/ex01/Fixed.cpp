@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 21:07:01 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/24 16:51:02 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/31 18:47:26 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ Fixed &Fixed::operator=(Fixed const &rhs)
 {
 	std::cout << " > Assignation operator called!" << std::endl;
 	if (this != &rhs)
-		this->_value = rhs.getRawBits();
+		this->_value = rhs._value;
 	return (*this);
 }
 

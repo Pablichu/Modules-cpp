@@ -1,11 +1,13 @@
-NAME	= some_traps
+NAME	= serotonine
 
 CC		= clang++
 FLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic
 RM		= rm -f
 
 SRC		=	main.cpp \
-			ClapTrap.cpp
+			Animal.cpp \
+			Dog.cpp \
+			Cat.cpp
 
 OBJS	=	$(SRC:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 17:59:14 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/30 20:23:43 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/01/31 20:54:27 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ClapTrap::ClapTrap(void) : _name("no_name"), _hitpoints(10), _energy_points(10),
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitpoints(10), _energy_points(10), _attack_damage(0)
 {
-	std::cout << "A trap was setted by someone." << std::endl;
+	std::cout << " > A clap trap was setted by someone." << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &src)
@@ -29,7 +29,7 @@ ClapTrap::ClapTrap(ClapTrap const &src)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "A trap is fucked up so it was throw away." << std::endl;
+	std::cout << " > " << this->_name << " is fucked up so it was throw away." << std::endl;
 }
 
 ClapTrap	&ClapTrap::operator=(ClapTrap const &src)
@@ -61,7 +61,7 @@ unsigned		ClapTrap::get_attackdm(void) const
 
 void	ClapTrap::attack(std::string const &target)
 {
-	std::cout << "Enemy " << this->_name << " attack " << target << ". Damage: " << this->_attack_damage << std::endl;
+	std::cout << " > " << this->_name << " attack " << target << ". Damage: " << this->_attack_damage << std::endl;
 }
 
 void	ClapTrap::takeDamege(unsigned int amount)
@@ -72,7 +72,7 @@ void	ClapTrap::takeDamege(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	std::cout << "Clap trap " << this->_name << " was repaired gaining " << amount << " " << std::endl;
+	std::cout << " > " << this->_name << " was repaired gaining " << amount << " " << std::endl;
 	this->_hitpoints += amount;
 }
 
