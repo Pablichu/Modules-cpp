@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 13:59:41 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/30 20:39:16 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/01 18:59:53 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 
 	DiamondTrap	&operator=(DiamondTrap const &src);
 
-	void		attack(const std::string &target);
+	void		attack(std::string const &target);
 	void		whoAmI();
 	std::string get_name() const;
 };

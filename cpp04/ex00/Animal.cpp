@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 20:51:54 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/31 22:15:33 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/01 19:24:05 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ std::string	Animal::getType(void) const
 
 void	Animal::makeSound(void) const
 {
-	std::cout << "*Loquendo making strange sounds*" << std::endl;
+	std::cout << " ' JJJJJJ no soy un animal JJJJJ' *Loquendo making strange sounds*" << std::endl;
 }

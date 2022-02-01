@@ -6,15 +6,15 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:04:36 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/31 22:18:22 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/01 19:38:01 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(void)
+Dog::Dog(void) : Animal("Dog")
 {
-	Animal("Dog");
+	std::cout << "Doggo comming in!" << std::endl;
 }
 
 Dog::Dog(Dog const &src)

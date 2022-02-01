@@ -7,7 +7,8 @@ RM		= rm -f
 SRC		=	main.cpp \
 			Animal.cpp \
 			Dog.cpp \
-			Cat.cpp
+			Cat.cpp \
+			WrongCat.cpp
 
 OBJS	=	$(SRC:.cpp=.o)
 

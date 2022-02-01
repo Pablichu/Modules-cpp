@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 18:07:32 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/30 20:28:19 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/01 18:55:34 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ public:
 
 	ScavTrap	&operator=(ScavTrap const &src);
 
+	void	attack(std::string const &target) const;
 	void	guardGate(void);
 };
 

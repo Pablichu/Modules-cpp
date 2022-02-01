@@ -6,15 +6,15 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:05:10 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/01/31 22:19:50 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/01 19:39:04 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat(void)
+Cat::Cat(void) : Animal("Cat")
 {
-	Animal("Cat");
+	std::cout << "We got a cat and remember: You mess with the Kato, you get disparato" << std::endl;
 }
 
 Cat::Cat(Cat const &src)
