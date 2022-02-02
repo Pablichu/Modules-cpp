@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:05:22 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/02 20:49:49 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/02 21:40:59 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "WrongAnimal.hpp"
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class WrongCat : public WrongAnimal
+class Cat : public Animal
 {
+private:
+	Brain	*_cabesa;
 public:
-	WrongCat(void);
-	WrongCat(WrongCat const &src);
-	~WrongCat(void);
+	Cat(void);
+	Cat(Cat const &src);
+	~Cat(void);
 
-	WrongCat	&operator=(WrongCat const &src);
+	Cat	&operator=(Cat const &src);
 
-	void		makeSound(void) const;
+	virtual void		makeSound(void) const;
 };

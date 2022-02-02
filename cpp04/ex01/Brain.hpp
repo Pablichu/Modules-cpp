@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/30 21:05:22 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/02 20:49:49 by pmira-pe         ###   ########.fr       */
+/*   Created: 2022/02/02 21:06:51 by pmira-pe          #+#    #+#             */
+/*   Updated: 2022/02/02 21:35:48 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "WrongAnimal.hpp"
+#include <iostream>
 
-class WrongCat : public WrongAnimal
+class Brain
 {
+private:
+	std::string	_ideas[100];
 public:
-	WrongCat(void);
-	WrongCat(WrongCat const &src);
-	~WrongCat(void);
+	Brain(void);
+	Brain(Brain const &src);
+	~Brain(void);
 
-	WrongCat	&operator=(WrongCat const &src);
-
-	void		makeSound(void) const;
+	Brain	&operator=(Brain const &src);
 };

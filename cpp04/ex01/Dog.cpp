@@ -6,13 +6,13 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:04:36 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/02 21:37:53 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/02 21:38:28 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(void) : Animal("Dog")
+Dog::Dog(void) : Animal("Dog"), _cabesa(new Brain())
 {
 	std::cout << "Doggo comming in!" << std::endl;
 }

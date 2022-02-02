@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/30 21:05:22 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/02 20:49:49 by pmira-pe         ###   ########.fr       */
+/*   Created: 2022/01/30 20:50:55 by pmira-pe          #+#    #+#             */
+/*   Updated: 2022/02/02 21:07:53 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "WrongAnimal.hpp"
+#include <iostream>
 
-class WrongCat : public WrongAnimal
+class Animal
 {
+protected:
+	std::string	_type;
 public:
-	WrongCat(void);
-	WrongCat(WrongCat const &src);
-	~WrongCat(void);
+	Animal(void);
+	Animal(std::string type);
+	Animal(Animal const &src);
+	~Animal(void);
 
-	WrongCat	&operator=(WrongCat const &src);
+	Animal	&operator=(Animal const &src);
 
-	void		makeSound(void) const;
+	std::string			getType(void) const;
+	virtual void		makeSound(void) const;
 };
