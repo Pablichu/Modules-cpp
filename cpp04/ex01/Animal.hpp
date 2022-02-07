@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 20:50:55 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/02 21:07:53 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/07 19:52:24 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
 	Animal(void);
 	Animal(std::string type);
 	Animal(Animal const &src);
-	~Animal(void);
+	virtual ~Animal(void);
 
 	Animal	&operator=(Animal const &src);
 

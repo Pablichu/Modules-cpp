@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:04:36 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/02 21:38:28 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/07 21:23:14 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,17 @@ Dog::Dog(Dog const &src)
 
 Dog::~Dog()
 {
+	delete(this->_cabesa);
 	std::cout << "It is time to make 5000 spins to make my bed comfortable." << std::endl;
 }
 
 Dog	&Dog::operator=(Dog const &src)
 {
 	if (this != &src)
+	{
 		this->_type = src._type;
+		this->_cabesa = src._cabesa;
+	}
 	return *this;
 }
 

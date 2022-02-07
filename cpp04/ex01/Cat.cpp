@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:05:10 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/02 21:39:08 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/07 21:09:59 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ Cat::Cat(Cat const &src)
 
 Cat::~Cat()
 {
+	delete(this->_cabesa);
 	std::cout << "Now it is time to plan the conquer of world ♫♪.ılılıll|̲̅̅●̲̅̅|̲̅̅=̲̅̅|̲̅̅●̲̅̅|llılılı.♫♪" << std::endl;
 }
 

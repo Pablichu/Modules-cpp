@@ -1,4 +1,4 @@
-NAME	= serotonine
+NAME	= thinking
 
 CC		= clang++
 FLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic
@@ -8,8 +8,7 @@ SRC		=	main.cpp \
 			Animal.cpp \
 			Dog.cpp \
 			Cat.cpp \
-			WrongAnimal.cpp \
-			WrongCat.cpp
+			Brain.cpp
 
 OBJS	=	$(SRC:.cpp=.o)
 

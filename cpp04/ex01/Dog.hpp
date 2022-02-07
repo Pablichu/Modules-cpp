@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:03:50 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/02 21:38:17 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/07 19:56:22 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ public:
 
 	Dog	&operator=(Dog const &src);
 
-	 virtual void		makeSound(void) const;
+	void		makeSound(void) const;
 };
