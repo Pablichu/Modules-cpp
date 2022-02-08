@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:04:36 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/07 21:23:14 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/08 22:01:17 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Dog	&Dog::operator=(Dog const &src)
 	if (this != &src)
 	{
 		this->_type = src._type;
-		this->_cabesa = src._cabesa;
+		this->_cabesa = src._cabesa->clone();
 	}
 	return *this;
 }

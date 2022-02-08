@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:05:10 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/07 21:09:59 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/08 22:00:59 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ Cat::~Cat()
 Cat	&Cat::operator=(Cat const &src)
 {
 	if (this != &src)
+	{
 		this->_type = src._type;
+		this->_cabesa = src._cabesa->clone();
+	}
 	return *this;
 }
 

@@ -6,13 +6,17 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 01:00:39 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/08 18:33:35 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/08 20:27:10 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
-MateriaSource::MateriaSource() {}
+MateriaSource::MateriaSource()
+{
+	for (int i = 0; i < MAX_MATERIAS; i++)
+		this->_sources[i] = NULL;
+}
 
 MateriaSource::MateriaSource(MateriaSource const &src)
 {

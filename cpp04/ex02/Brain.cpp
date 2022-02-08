@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 21:06:57 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/07 21:25:42 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/08 22:02:30 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,9 @@ Brain	&Brain::operator=(Brain const &src)
 			this->_ideas[i] = src._ideas[i];
 	}
 	return *this;
+}
+
+Brain	*Brain::clone() const
+{
+	return (new Brain());
 }

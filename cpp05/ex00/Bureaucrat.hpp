@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 21:06:51 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/08 21:45:18 by pmira-pe         ###   ########.fr       */
+/*   Created: 2022/02/08 22:14:45 by pmira-pe          #+#    #+#             */
+/*   Updated: 2022/02/08 22:16:02 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
-
-class Brain
+class Bureaucrat
 {
 private:
-	std::string	_ideas[100];
+	/* data */
 public:
-	Brain(void);
-	Brain(Brain const &src);
-	~Brain(void);
+	Bureaucrat();
+	Bureaucrat(Bureaucrat const &src);
+	~Bureaucrat();
 
-	Brain	&operator=(Brain const &src);
-
-	Brain	*clone() const;
+	Bureaucrat	&operator=(Bureaucrat const &src);
 };
+
