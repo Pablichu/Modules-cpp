@@ -1,39 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/08 01:25:03 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/08 18:40:36 by pmira-pe         ###   ########.fr       */
+/*   Created: 2022/01/30 21:04:36 by pmira-pe          #+#    #+#             */
+/*   Updated: 2022/02/07 21:23:14 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "Dog.hpp"
 
-Ice::Ice(void) : AMateria("ice") {}
+Dog::Dog(void) : Animal("Dog"), _cabesa(new Brain())
+{
+	std::cout << "Doggo comming in!" << std::endl;
+}
 
-Ice::Ice(Ice const &src)
+Dog::Dog(Dog const &src)
 {
 	*this = src;
 }
 
-Ice::~Ice(void) {}
+Dog::~Dog()
+{
+	delete(this->_cabesa);
+	std::cout << "It is time to make 5000 spins to make my bed comfortable." << std::endl;
+}
 
-Ice	&Ice::operator=(Ice const &src)
+Dog	&Dog::operator=(Dog const &src)
 {
 	if (this != &src)
+	{
 		this->_type = src._type;
+		this->_cabesa = src._cabesa;
+	}
 	return *this;
 }
 
-AMateria*	Ice::clone() const
+void		Dog::makeSound(void) const
 {
-	return (new Ice());
-}
-
-void		Ice::use(ICharacter& target)
-{
-	std::cout << "* shoots an ice bolt at " << target.getName() <<  " *" << std::endl;
+	std::cout << " ' WHO LET THE DOGS OUT? ' *proceeds to jump through the stairs*" << std::endl;
 }

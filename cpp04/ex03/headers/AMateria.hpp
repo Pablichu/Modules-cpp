@@ -6,13 +6,14 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 21:41:21 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/08 01:54:30 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/08 18:40:19 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "MateriaSource.hpp"
+#include "ICharacter.hpp"
 
 class AMateria
 {
@@ -22,11 +23,11 @@ protected:
 public:
 	AMateria(std::string const & type);
 	AMateria(AMateria const &src);
-	~AMateria(void);
+	virtual ~AMateria(void);
 
 	AMateria	&operator=(AMateria const &src);
 
-	std::string const & getType() const; //Returns the materia type
+	std::string const & getType() const;
 	virtual AMateria* clone() const = 0;
 	virtual void use(ICharacter& target);
 };

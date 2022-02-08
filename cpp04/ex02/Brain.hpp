@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 21:44:10 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/08 18:24:27 by pmira-pe         ###   ########.fr       */
+/*   Created: 2022/02/02 21:06:51 by pmira-pe          #+#    #+#             */
+/*   Updated: 2022/02/07 19:19:05 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "AMateria.hpp"
+#include <iostream>
 
-class AMateria;
-
-class IMateriaSource
+class Brain
 {
+private:
+	std::string	_ideas[100];
 public:
-	virtual				~IMateriaSource() {}
-	virtual void 		learnMateria(AMateria*) = 0;
-	virtual AMateria*	createMateria(std::string const & type) = 0;
+	Brain(void);
+	Brain(Brain const &src);
+	~Brain(void);
+
+	Brain	&operator=(Brain const &src);
 };

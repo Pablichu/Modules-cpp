@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 21:44:10 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/08 18:24:27 by pmira-pe         ###   ########.fr       */
+/*   Created: 2022/01/30 20:49:10 by pmira-pe          #+#    #+#             */
+/*   Updated: 2022/02/07 21:03:21 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Dog.hpp"
+#include "Cat.hpp"
 
-#include "AMateria.hpp"
-
-class AMateria;
-
-class IMateriaSource
+int	main()
 {
-public:
-	virtual				~IMateriaSource() {}
-	virtual void 		learnMateria(AMateria*) = 0;
-	virtual AMateria*	createMateria(std::string const & type) = 0;
-};
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+
+	delete j;//should not create a leak
+	delete i;
+}

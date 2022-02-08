@@ -6,13 +6,16 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 21:43:17 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/08 02:10:27 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/08 18:23:23 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Character.hpp"
+#include "MateriaSource.hpp"
+#include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {

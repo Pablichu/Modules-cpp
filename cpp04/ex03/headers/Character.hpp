@@ -6,13 +6,14 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 02:05:56 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/08 02:25:36 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/08 15:35:10 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "MateriaSource.hpp"
+#define	BAG_SIZE	4
 
 typedef struct s_bag
 {
@@ -20,11 +21,11 @@ typedef struct s_bag
 	bool		setted;
 }		t_bag;
 
-class Character
+class Character : public ICharacter
 {
 private:
 	std::string	_name;
-	t_bag	my_bag[4];	
+	t_bag	my_bag[BAG_SIZE];	
 public:
 	Character(void);
 	Character(std::string name);
