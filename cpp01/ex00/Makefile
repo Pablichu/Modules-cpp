@@ -1,6 +1,6 @@
 NAME	= Zombie_cabron
 
-CC		= clang++
+CXX		= clang++
 FLAGS	= -Wall -Wextra -Werror
 RM		= rm -f
 
@@ -14,7 +14,7 @@ OBJS	=	$(SRC:.cpp=.o)
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
-			$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+			$(CXX) $(FLAGS) $(OBJS) -o $(NAME)
 
 clean:
 		@$(RM) $(OBJS)

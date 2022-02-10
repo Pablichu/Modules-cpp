@@ -16,7 +16,7 @@ OBJECTS		:= $(patsubst $(SRC_DIR)%, $(OBJ_DIR)%, $(SOURCES:.cpp=.o))
 # COMPILER CONFIG
 CXX			:= clang++
 CXXFLAGS	:= -Wall -Wextra -Werror -std=c++98
-# CC		C compiler
+# CXX		C compiler
 # CFLAGS	flags for C compiler
 # CPPFLAGS	flags for both compilers
 

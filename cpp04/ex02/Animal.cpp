@@ -6,15 +6,15 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 20:51:54 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/07 19:52:40 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/10 20:04:15 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal(void)
+Animal::Animal(void) : _type("Animal_not_identified")
 {
-	Animal("Animal not identified");
+	std::cout << "Preset animal! Born to shit." << std::endl;
 }
 
 Animal::Animal(std::string type) : _type(type)

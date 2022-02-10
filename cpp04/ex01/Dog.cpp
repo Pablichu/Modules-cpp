@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:04:36 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/08 22:01:33 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/10 19:52:15 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,21 @@ Dog::~Dog()
 
 Dog	&Dog::operator=(Dog const &src)
 {
-	if (this != &src)
-	{
-		this->_type = src._type;
-		this->_cabesa = src._cabesa->clone();
-	}
+	if (this == &src)
+		return *this;
+
+	this->_type = src._type;
+	this->_cabesa = new Brain();
 	return *this;
 }
 
 void		Dog::makeSound(void) const
 {
 	std::cout << " ' WHO LET THE DOGS OUT? ' *proceeds to jump through the stairs*" << std::endl;
+}
+
+void	Dog::whatThink() const
+{
+	std::cout << "What the dog doing?" << std::endl;
+	this->_cabesa->showIdeas();
 }

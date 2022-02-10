@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 21:05:10 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/08 22:00:59 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/10 19:38:38 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,10 @@ Cat	&Cat::operator=(Cat const &src)
 void		Cat::makeSound(void) const
 {
 	std::cout << " ' Meeeooow ' *proceeds to shit in the carpet*" << std::endl;
+}
+
+void	Cat::whatThink() const
+{
+	std::cout << "What the cat doing?" << std::endl;
+	this->_cabesa->showIdeas();
 }

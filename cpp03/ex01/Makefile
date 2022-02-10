@@ -1,6 +1,6 @@
 NAME	= more_traps
 
-CC		= clang++
+CXX		= clang++
 FLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic
 RM		= rm -f
 
@@ -13,7 +13,7 @@ OBJS	=	$(SRC:.cpp=.o)
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
-			$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+			$(CXX) $(FLAGS) $(OBJS) -o $(NAME)
 
 clean:
 		@$(RM) $(OBJS)

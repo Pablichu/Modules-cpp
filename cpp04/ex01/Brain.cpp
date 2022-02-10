@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 21:06:57 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/08 21:59:41 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/10 19:33:02 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ Brain::Brain(void)
 	this->_ideas[2] = "fuck";
 	this->_ideas[3] = "shit";
 	this->_ideas[4] = "repeat";
+	for (size_t i = 5; i < 100; i++)
+		this->_ideas[i] = "";
 }
 
 Brain::Brain(Brain const &src)
@@ -45,4 +47,15 @@ Brain	&Brain::operator=(Brain const &src)
 Brain	*Brain::clone() const
 {
 	return (new Brain());
+}
+
+void	Brain::showIdeas() const
+{
+	for (size_t i = 0; i < 100; i++)
+	{
+		if (this->_ideas[i] == "")
+			break ;
+		std::cout << "| " << i << " " << this->_ideas[i];
+	}
+	std::cout << std::endl;
 }

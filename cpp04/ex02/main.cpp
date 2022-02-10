@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 20:49:10 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/07 21:03:21 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/10 20:09:32 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,12 @@
 
 int	main()
 {
-	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 
-	delete j;//should not create a leak
+	std::cout << std::endl;
+	i->makeSound();
+	std::cout << "HOLY SHIT, DID YOU REALLY SHIT IN MY CRIB? YOU BIG MOTHERFUCKER!!" << std::endl << std::endl;
+
+	std::cin.ignore();
 	delete i;
 }

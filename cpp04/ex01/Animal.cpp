@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 20:51:54 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/07 19:52:40 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/10 19:59:10 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ Animal::~Animal()
 Animal	&Animal::operator=(Animal const &src)
 {
 	if (this != &src)
+	{
 		this->_type = src._type;
+
+	}
 	return *this;
 }
 

@@ -1,4 +1,4 @@
-NAME	= materias
+NAME	= a_day_in_Midgar
 
 CXX		= clang++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -Iheaders
@@ -12,9 +12,6 @@ SRC		=	main.cpp \
 			source/MateriaSource.cpp
 
 OBJS	=	$(SRC:.cpp=.o)
-
-#%.o: %.cpp
-#	$(CC) -o $@ -c $< $(FLAGS)
 
 all:	$(NAME)
 

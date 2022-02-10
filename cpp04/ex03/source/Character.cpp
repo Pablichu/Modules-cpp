@@ -6,16 +6,17 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 02:12:44 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/08 17:22:54 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/10 20:52:25 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character(void)
+Character::Character(void) : _name("Cloud")
 {
 	std::cout << "Standart constructor." << std::endl;
-	Character("Cloud");
+	for (size_t i = 0; i < 4; i++)
+		my_bag[i].setted = false;
 }
 
 Character::Character(std::string name) : _name(name)

@@ -1,7 +1,7 @@
 NAME	= serotonine
 
-CC		= clang++
-FLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic
+CXX		= clang++
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic
 RM		= rm -f
 
 SRC		=	main.cpp \
@@ -16,7 +16,7 @@ OBJS	=	$(SRC:.cpp=.o)
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
-			$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+			$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 		@$(RM) $(OBJS)
