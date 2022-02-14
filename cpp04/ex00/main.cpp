@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 20:49:10 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/10 19:25:08 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/14 19:26:18 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main()
 	const Animal* i = new Cat();
 
 	std::cout << j->getType() << " / Dog" << std::endl;
-	std::cout << i->getType() << " / Cat" << std::endl;
+	std::cout << i->getType() << " / Cat" << std::endl << std::endl;
 	i->makeSound();
 	j->makeSound();
 	meta->makeSound();

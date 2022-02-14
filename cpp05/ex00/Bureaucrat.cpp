@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 22:14:42 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/09 22:54:10 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/14 22:29:00 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ Bureaucrat::Bureaucrat() : _name("Bob 720"),  _grade(150)
 	std::cout << "So you got no documentation. Then, you are just a preset." << std::endl;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade)
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 {
-	
+	this->checker();
+	std::cout << "You have been admitted by the ministry of consumption. " << this->_name << " / " << this->_grade << std::endl;
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &src)
@@ -34,7 +35,9 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat	&Bureaucrat::operator=(Bureaucrat const &src)
 {
-
+	if (this != &src)
+		this->_grade = src._grade;
+	return *this;
 }
 
 std::string const	&Bureaucrat::getName()const
@@ -49,20 +52,38 @@ int const	&Bureaucrat::getGrade()const
 
 void	Bureaucrat::gradeUp()
 {
-	try
-	{
-		/* code */
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	
+	this->_grade--;
+	this->checker();
 }
 
 void	Bureaucrat::gradeDown()
 {
-	
+	this->_grade++;
+	this->checker();
+}
+
+void	Bureaucrat::checker()
+{
+	if (this->_grade < 1)
+	{
+		this->_grade = 1;
+		throw GradeTooHighException();
+	}
+	else if (this->_grade > 150)
+	{
+		this->_grade = 150;
+		throw GradeTooLowException();
+	}
+}
+
+const char*	Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return (" -> You cannot exceed grade up of 1.");
+}
+
+const char*	Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return (" -> You cannot be down of 150.");
 }
 
 std::ostream &	operator<<(std::ostream &out, Bureaucrat const &rhs)
