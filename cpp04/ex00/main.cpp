@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 20:49:10 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/14 19:26:18 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/14 22:55:30 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	main()
 	delete(meta);
 	delete(i);
 	delete(j);
+	std::cout << std::endl << std::string(25, '-') << std::endl;
 
 	const WrongAnimal* diff = new WrongAnimal();
 	const WrongAnimal* x = new WrongCat();
