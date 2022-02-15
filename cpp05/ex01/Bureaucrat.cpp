@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 22:14:42 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/14 22:29:00 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/15 20:54:17 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,17 @@ void	Bureaucrat::checker()
 	}
 }
 
+bool	Bureaucrat::signForm(Form const &src) const
+{
+	if (this->_grade > src.getreqGrade())
+	{
+		std::cout << this->_name << " have too low grade to sign " << src.getNameF() << std::endl;
+		return false;
+	}
+	std::cout << this->_name << " have signed " << src.getNameF() << std::endl;
+	return true;
+}
+
 const char*	Bureaucrat::GradeTooHighException::what() const throw()
 {
 	return (" -> You cannot exceed grade up of 1.");
@@ -83,7 +94,7 @@ const char*	Bureaucrat::GradeTooHighException::what() const throw()
 
 const char*	Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return (" -> You cannot be down of 150.");
+	return (" -> Your grade cannot be down of 150.");
 }
 
 std::ostream &	operator<<(std::ostream &out, Bureaucrat const &rhs)

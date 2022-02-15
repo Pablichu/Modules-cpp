@@ -10,15 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#pragma once
+
+#include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
 private:
-	std::string	_name;
-	bool	_signed;
-	int		reqGrade;
-	int		reqGradeExe;
+	const std::string	_name;
+	bool				_signed;
+	const int			_reqGrade;
+	const int			_reqGradeExe;
 public:
 	Form();
 	Form(std::string name, int req, int exe);
@@ -26,6 +30,23 @@ public:
 	~Form();
 
 	Form	&operator=(Form const &src);
+
+	std::string const	&getNameF() const;
+	bool		isSigned() const;
+	int			getreqGrade() const;
+	int		 	getreqGradeExe() const;
+	void		beSigned(Bureaucrat &bob);
+
+	class GradeTooHighException : public std::exception
+	{
+		public:
+			virtual const char*	what() const throw();
+	};
+	class GradeTooLowException : public std::exception
+	{
+		public:
+			virtual const char*	what() const throw();
+	};
 };
 
 std::ostream &	operator<<(std::ostream &out, Form const &rhs);

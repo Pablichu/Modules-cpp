@@ -12,19 +12,23 @@
 
 #include "Form.hpp"
 
-Form::Form() : _name("Model 202"), _signed(false), reqGrade(150), reqGradeExe(150)
+Form::Form() : _name("Model 202"), _signed(false), _reqGrade(150), _reqGradeExe(150)
 {
 	std::cout << "Standart form created!" << std::endl;
 }
 
-Form::Form(std::string name, int req, int exe) : _name("Model 202"), _signed(false), reqGrade(req), reqGradeExe(exe)
+Form::Form(std::string name, int req, int exe) : _name(name), _signed(false), _reqGrade(req), _reqGradeExe(exe)
 {
-	std::cout << this->_name << " created. Required: " << this->reqGrade << " | " << this->reqGradeExe << std::endl;
+	std::cout << this->_name << " created. Required: " << this->_reqGrade << " | " << this->_reqGradeExe << std::endl;
+	if (this->_reqGrade > 150 || this->_reqGradeExe > 150)
+		throw GradeTooLowException();
+	else if (this->_reqGrade < 1 || this->_reqGradeExe < 1)
+		throw GradeTooHighException();
 }
 
-Form::Form(Form const &src)
+Form::Form(Form const &src) : _name(src._name), _signed(src._signed), _reqGrade(src._reqGrade), _reqGradeExe(src._reqGradeExe)
 {
-	*this = src;
+	std::cout << this->_name << " created. Required: " << this->_reqGrade << " | " << this->_reqGradeExe << "." << std::endl;
 }
 
 Form::~Form()
@@ -36,15 +40,55 @@ Form	&Form::operator=(Form const &src)
 {
 	if (this == &src)
 		return *this;
-
-	this->_name = src._name;
 	this->_signed = src._signed;
-	this->reqGrade = src.reqGrade;
-	this->reqGradeExe = src.reqGradeExe;
 	return *this;
+}
+
+std::string const	&Form::getNameF() const
+{
+	return this->_name;
+}
+
+bool		Form::isSigned() const
+{
+	return this->_signed;
+}
+
+int			Form::getreqGrade() const
+{
+	return this->_reqGrade;
+}
+
+int		 	Form::getreqGradeExe() const
+{
+	return this->_reqGradeExe;
+}
+
+void		Form::beSigned(Bureaucrat &bob)
+{
+	if (!bob.signForm(*this))
+	{
+		throw GradeTooLowException();
+		return ;
+	}
+	this->_signed = true;
+}
+
+const char*	Form::GradeTooHighException::what() const throw()
+{
+	return (" -> Everything has a limit. Surpassing grade 1 is one of them. Back off!");
+}
+
+const char*	Form::GradeTooLowException::what() const throw()
+{
+	return (" -> Too low grade");
 }
 
 std::ostream &	operator<<(std::ostream &out, Form const &rhs)
 {
-	out << "Form: ";
+	if (rhs.isSigned())
+		out << "[✅] -> Form: " << rhs.getNameF() << ". Required grade: " << rhs.getreqGrade() << " | " << rhs.getreqGradeExe();
+	else
+		out << "[❌] -> Form: " << rhs.getNameF() << ". Required grade: " << rhs.getreqGrade() << " | " << rhs.getreqGradeExe();
+	return out;
 }

@@ -1,11 +1,12 @@
-NAME	= sorry_you_ask_for_state
+NAME	= new_models_comming_in
 
 CXX		= clang++
-CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -Iheaders
+CXXFLAGS	= -Wall -Wextra -Werror  -Iheaders#-std=c++98
 RM		= rm -f
 
 SRC		=	main.cpp \
-			Bureaucrat.cpp
+			Bureaucrat.cpp \
+			Form.cpp
 
 OBJS	=	$(SRC:.cpp=.o)
 

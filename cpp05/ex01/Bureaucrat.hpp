@@ -6,13 +6,16 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 22:14:45 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/14 22:50:51 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/15 20:27:26 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -28,10 +31,11 @@ public:
 	Bureaucrat	&operator=(Bureaucrat const &src);
 
 	std::string const	&getName()const;
-	int const	&getGrade()const;
+	int const			&getGrade()const;
 	void	gradeUp();
 	void	gradeDown();
 	void	checker();
+	bool	signForm(Form const &src) const;
 
 	class GradeTooHighException : public std::exception
 	{
