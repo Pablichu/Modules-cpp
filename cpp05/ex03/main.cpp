@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 22:07:59 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/17 21:59:39 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/17 22:45:43 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 void	gradeUpdate(Bureaucrat &bob, bool up, int num)
 {
@@ -67,38 +68,40 @@ int	main()
 	Bureaucrat	bob("Bob", 70);
 
 	std::cout << " >> Hello and welcome to the ministry of consumption." << std::endl << " >> Today we have a new form we need to sign." << std::endl;
-	std::cout << " >> " << bob.getName() << " go sign and execute as much forms as you can." << std::endl << std::endl;
+	std::cout << " >> " << bob.getName() << ", we have seen that this is too much work for someone like you." << std::endl
+			  << "    So, we are hiring a new intern!" << std::endl;
+	Intern	more_intern;
+	std::cout << " >> Your new partner will help you about making form. Just sign them and try execute'em." << std::endl;
 
-	Form	*model1 = new ShrubberyCreationForm("Greta Thunberg");
-	Form	*model2 = new RobotomyRequestForm("Bob");
-	Form	*model3 = new PresidentialPardonForm("Obama Junior");
-
-	std::cout << std::endl << *model1 << std::endl << *model2 << std::endl << *model3 << std::endl;
-	std::cout << "Are you ready, " << bob.getName() << "?" << std::endl;
+	//Form	*model1;= new ShrubberyCreationForm("Greta Thunberg");
+	//Form	*model2;= new RobotomyRequestForm("Bob");
+	//Form	*model3;= new PresidentialPardonForm("Obama Junior");
 	std::cin.ignore();
 
-	signing(bob, *model1);
-	signing(bob, *model2);
-	signing(bob, *model3);
-	std::cout << std::endl << *model1 << std::endl << *model2 << std::endl << *model3 << std::endl;
-	std::cin.ignore();
-
-	std::cout << std::endl << bob.getName() << " says: 'Time to execute'" << std::endl;
-	executing(bob, *model1);
-	executing(bob, *model2);
-	executing(bob, *model3);
-	std::cout << std::endl << " >> It seems that you, " << bob.getName() << ", cannot execute every form. So we'll summond Super Bob" << std::endl;
-	std::cin.ignore();
-
-	Bureaucrat	Superbob("Super Bob", 10);
-	signing(Superbob, *model3);
-	std::cout << std::endl << *model1 << std::endl << *model2 << std::endl << *model3 << std::endl;
-	std::cin.ignore();
-	executing(Superbob, *model2);
-	executing(Superbob, *model3);
-	delete(model1);
-	delete(model2);
-	delete(model3);
+	Form	*ptrF;
+	std::string	target;
+	std::string	command;
+	std::cout << "[Intern]: Who is the target?" << std::endl;
+	std::getline(std::cin, target);
+	while(true)
+	{
+		std::cout << "[Intern]: Tell me what do you need:" << std::endl;
+		std::getline(std::cin, command);
+		if (command == "exit")
+			break ;
+		ptrF = more_intern.makeForm(command, target);
+		std::cout << std::endl << std::string(30, '-') << std::endl;
+		if (!ptrF)
+			std::cout << "[Intern]: That's why I am here. You make mistakes " << bob.getName() << ", and I am here to stop you." << std::endl;
+		else
+		{
+			std::cout << *ptrF << std::endl;
+			signing(bob, *ptrF);
+			std::cout << *ptrF << std::endl;
+			executing(bob, *ptrF);
+			delete ptrF;
+		}
+	}
 	std::cout << " >> Okay, thats enought for today. See you tomorrow." << std::endl;
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 22:14:42 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/17 22:26:41 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/17 21:09:08 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Bureaucrat::Bureaucrat() : _name("Bob 720"),  _grade(150)
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 {
 	this->checker();
-	std::cout << " <<You have been admitted by the ministry of consumption. " << this->_name << " / " << this->_grade<< ">>" << std::endl;
+	std::cout << "You have been admitted by the ministry of consumption. " << this->_name << " / " << this->_grade << std::endl;
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &src)
