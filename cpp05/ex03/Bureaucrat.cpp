@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 22:14:42 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/17 21:09:08 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/18 17:44:23 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,11 @@ bool	Bureaucrat::signForm(Form const &src) const
 
 bool	Bureaucrat::executeForm(Form const & form) const
 {
+	if (!form.isSigned())
+	{
+		std::cout << form.getNameF() << " is not signed. First you have to sign it, " << this->_name << std::endl;
+		return false;
+	}
 	if (this->_grade > form.getreqGrade())
 	{
 		std::cout << this->_name << " have too low grade to execute " << form.getNameF() << std::endl;

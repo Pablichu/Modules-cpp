@@ -21,10 +21,6 @@ Form::Form() : _name("Model 202"), _signed(false), _reqGrade(150), _reqGradeExe(
 Form::Form(std::string name, int req, int exe) : _name(name), _signed(false), _reqGrade(req), _reqGradeExe(exe)
 {
 	std::cout << this->_name << " created. Required: " << this->_reqGrade << " | " << this->_reqGradeExe << std::endl;
-	if (this->_reqGrade > 150 || this->_reqGradeExe > 150)
-		throw GradeTooLowException();
-	else if (this->_reqGrade < 1 || this->_reqGradeExe < 1)
-		throw GradeTooHighException();
 }
 
 Form::Form(Form const &src) : _name(src._name), _signed(src._signed), _reqGrade(src._reqGrade), _reqGradeExe(src._reqGradeExe)
@@ -43,6 +39,14 @@ Form	&Form::operator=(Form const &src)
 		return *this;
 	this->_signed = src._signed;
 	return *this;
+}
+
+void	Form::checker()
+{
+	if (this->_reqGrade > 150 || this->_reqGradeExe > 150)
+		throw GradeTooLowException();
+	else if (this->_reqGrade < 1 || this->_reqGradeExe < 1)
+		throw GradeTooHighException();
 }
 
 std::string const	&Form::getNameF() const
@@ -65,7 +69,7 @@ int		 	Form::getreqGradeExe() const
 	return this->_reqGradeExe;
 }
 
-void		Form::beSigned(Bureaucrat const &bob) //throw(GradeTooLowException)
+void		Form::beSigned(Bureaucrat const &bob)
 {
 	if (!bob.signForm(*this))
 		throw GradeTooLowException();
@@ -77,7 +81,7 @@ void	Form::execute(Bureaucrat const &executor) const
 {
 	if (!executor.executeForm(*this) || !this->_signed)
 	{
-		if (this->_signed)
+		if (!this->_signed)
 			throw FormNotSigned();
 		else
 			throw GradeTooLowException();

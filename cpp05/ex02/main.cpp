@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 22:07:59 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/17 21:59:39 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/18 17:39:52 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	executing(Bureaucrat &bob, Form &subject)
 
 int	main()
 {
-	Bureaucrat	bob("Bob", 70);
+	Bureaucrat	bob("Bob", 30);
 
 	std::cout << " >> Hello and welcome to the ministry of consumption." << std::endl << " >> Today we have a new form we need to sign." << std::endl;
 	std::cout << " >> " << bob.getName() << " go sign and execute as much forms as you can." << std::endl << std::endl;
@@ -78,7 +78,7 @@ int	main()
 	std::cin.ignore();
 
 	signing(bob, *model1);
-	signing(bob, *model2);
+	//signing(bob, *model2);
 	signing(bob, *model3);
 	std::cout << std::endl << *model1 << std::endl << *model2 << std::endl << *model3 << std::endl;
 	std::cin.ignore();

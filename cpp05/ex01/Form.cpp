@@ -44,6 +44,14 @@ Form	&Form::operator=(Form const &src)
 	return *this;
 }
 
+void	Form::checker()
+{
+	if (this->_reqGrade > 150 || this->_reqGradeExe > 150)
+		throw GradeTooLowException();
+	else if (this->_reqGrade < 1 || this->_reqGradeExe < 1)
+		throw GradeTooHighException();
+}
+
 std::string const	&Form::getNameF() const
 {
 	return this->_name;

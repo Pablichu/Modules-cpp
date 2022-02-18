@@ -1,7 +1,7 @@
 NAME	= new_models_comming_in
 
 CXX		= clang++
-CXXFLAGS	= -Wall -Wextra -Werror  -Iheaders#-std=c++98
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 RM		= rm -f
 
 SRC		=	main.cpp \

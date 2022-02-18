@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 22:14:42 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/17 22:26:41 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/18 17:45:38 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ Bureaucrat::Bureaucrat() : _name("Bob 720"),  _grade(150)
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 {
-	this->checker();
 	std::cout << " <<You have been admitted by the ministry of consumption. " << this->_name << " / " << this->_grade<< ">>" << std::endl;
 }
 
@@ -89,7 +88,12 @@ bool	Bureaucrat::signForm(Form const &src) const
 
 bool	Bureaucrat::executeForm(Form const & form) const
 {
-	if (this->_grade > form.getreqGrade())
+	if (!form.isSigned())
+	{
+		std::cout << form.getNameF() << " is not signed. First you have to sign it, " << this->_name << std::endl;
+		return false;
+	}
+	if (this->_grade > form.getreqGradeExe())
 	{
 		std::cout << this->_name << " have too low grade to execute " << form.getNameF() << std::endl;
 		return false;

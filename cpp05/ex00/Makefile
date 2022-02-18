@@ -1,8 +1,8 @@
 NAME	= sorry_you_ask_for_state
 
-CXX		= clang++
-CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -Iheaders
-RM		= rm -f
+CXX			= clang++
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
+RM			= rm -f
 
 SRC		=	main.cpp \
 			Bureaucrat.cpp
@@ -22,4 +22,4 @@ fclean:	clean
 
 re:		fclean all
 
-.PHONE:	all clean fclean re
+.PHONY:	all clean fclean re

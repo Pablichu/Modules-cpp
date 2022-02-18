@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 22:07:59 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/17 22:45:43 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/18 17:28:37 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,9 @@ int	main()
 
 	std::cout << " >> Hello and welcome to the ministry of consumption." << std::endl << " >> Today we have a new form we need to sign." << std::endl;
 	std::cout << " >> " << bob.getName() << ", we have seen that this is too much work for someone like you." << std::endl
-			  << "    So, we are hiring a new intern!" << std::endl;
+			  << "    So, we are hiring a new intern!" << std::endl << std::endl;
 	Intern	more_intern;
 	std::cout << " >> Your new partner will help you about making form. Just sign them and try execute'em." << std::endl;
-
-	//Form	*model1;= new ShrubberyCreationForm("Greta Thunberg");
-	//Form	*model2;= new RobotomyRequestForm("Bob");
-	//Form	*model3;= new PresidentialPardonForm("Obama Junior");
 	std::cin.ignore();
 
 	Form	*ptrF;
@@ -85,12 +81,14 @@ int	main()
 	std::getline(std::cin, target);
 	while(true)
 	{
+		std::cout << std::endl << std::string(30, '-') << std::endl;
 		std::cout << "[Intern]: Tell me what do you need:" << std::endl;
 		std::getline(std::cin, command);
 		if (command == "exit")
 			break ;
+		std::cout << std::string(30, '-') << std::endl;
 		ptrF = more_intern.makeForm(command, target);
-		std::cout << std::endl << std::string(30, '-') << std::endl;
+		std::cout << std::string(30, '-') << std::endl;
 		if (!ptrF)
 			std::cout << "[Intern]: That's why I am here. You make mistakes " << bob.getName() << ", and I am here to stop you." << std::endl;
 		else
@@ -102,6 +100,7 @@ int	main()
 			delete ptrF;
 		}
 	}
-	std::cout << " >> Okay, thats enought for today. See you tomorrow." << std::endl;
+	std::cout << std::endl << " >> Okay, thats enought for today. See you tomorrow." << std::endl;
+	std::cout << std::endl << "[Deep inside of " << bob.getName() << " there is an opinion about the new intern. He does too much work.]" << std::endl;
 	return 0;
 }

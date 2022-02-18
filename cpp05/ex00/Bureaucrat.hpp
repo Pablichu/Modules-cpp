@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 22:14:45 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/14 22:50:51 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/18 15:51:04 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ public:
 	Bureaucrat	&operator=(Bureaucrat const &src);
 
 	std::string const	&getName()const;
-	int const	&getGrade()const;
-	void	gradeUp();
-	void	gradeDown();
-	void	checker();
+	int const			&getGrade()const;
+	void				gradeUp();
+	void				gradeDown();
+	void				checker();
 
 	class GradeTooHighException : public std::exception
 	{

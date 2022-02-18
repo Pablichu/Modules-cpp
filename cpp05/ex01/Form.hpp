@@ -31,11 +31,12 @@ public:
 
 	Form	&operator=(Form const &src);
 
+	void				checker();
 	std::string const	&getNameF() const;
-	bool		isSigned() const;
-	int			getreqGrade() const;
-	int		 	getreqGradeExe() const;
-	void		beSigned(Bureaucrat &bob);
+	bool				isSigned() const;
+	int					getreqGrade() const;
+	int				 	getreqGradeExe() const;
+	void				beSigned(Bureaucrat &bob);
 
 	class GradeTooHighException : public std::exception
 	{
