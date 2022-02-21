@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 18:20:47 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/21 00:34:29 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/21 20:32:30 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ void	catcher(const std::string &lefrase, const int flag)
 		case 0:
 		{
 			if (lefrase.length() == 1 && !isdigit(lefrase[0]))
-				std::cout << "char >> " << lefrase << std::endl;
+				std::cout << "char   >> " << lefrase << std::endl;
 			else
 			{
 				const int	num_char = static_cast<int>(std::stoi(lefrase));
 				if (isprint(num_char))
-					std::cout << "char >> " << static_cast<char>(num_char) << std::endl;
+					std::cout << "char   >> " << static_cast<char>(num_char) << std::endl;
 				else
-					std::cout << "char >>  Non displayable" << std::endl;
+					std::cout << "char   >> Non displayable" << std::endl;
 			}
 			break;
 		}
@@ -42,7 +42,7 @@ void	catcher(const std::string &lefrase, const int flag)
 				num_int = static_cast<int>(lefrase[0]);
 			else
 				num_int = static_cast<int>(std::stoi(lefrase));
-			std::cout << "int   >> " << num_int << std::endl;
+			std::cout << "int    >> " << num_int << std::endl;
 			break;
 		}
 		case 2:
@@ -52,7 +52,7 @@ void	catcher(const std::string &lefrase, const int flag)
 				num_float = static_cast<float>(lefrase[0]);
 			else
 				num_float = static_cast<float>(std::stof(lefrase));
-			std::cout << "float >> " << std::fixed << std::setprecision(1) << num_float << "f" << std::endl;
+			std::cout << "float  >> " << std::fixed << std::setprecision(1) << num_float << "f" << std::endl;
 			break;
 		}
 		case 3:

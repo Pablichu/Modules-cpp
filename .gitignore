@@ -9,3 +9,6 @@
 
 # Ignore all .o
 *.o
+
+# Unignore all Makefiles
+!Makefile
