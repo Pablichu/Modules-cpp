@@ -73,7 +73,7 @@ int		 	Form::getreqGradeExe() const
 	return this->_reqGradeExe;
 }
 
-void		Form::beSigned(Bureaucrat const &bob) //throw(GradeTooLowException)
+void		Form::beSigned(Bureaucrat const &bob)
 {
 	if (!bob.signForm(*this))
 		throw GradeTooLowException();
