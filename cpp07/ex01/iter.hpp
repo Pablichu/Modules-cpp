@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 18:01:35 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/22 18:31:41 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/22 20:52:32 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,28 @@
 #include <iostream>
 
 template<typename T>
-void	iter(T *str, int const len, void (*f)(T const &data))
+void	iter(T *str, int const len, void (*f)(T &data))
 {
-	for (size_t i = 0; i < len; i++)
+	for (int i = 0; i < len; i++)
 		f(str[i]);
 	return ;
 }
 
 template<typename T>
-void	zero(T data)
+void	zero(T &data)
 {
 	data = 0;
 }
 
 template<typename T>
-void	aficador(T data)
+void	aficador(T &data)
 {
-	data = 'a';
+	if (data == 'e' || data == 'i' || data == 'o' || data == 'u')
+		data = 97;
 }
 
 template<typename T>
-void	prinIt(T data)
+void	prinIt(T &data)
 {
-	std::cout << static_cast<T>(data); 
+	std::cout << static_cast<T>(data) <<  std::endl; 
 }

@@ -1,4 +1,4 @@
-NAME	= iterates
+NAME	= arrayes
 
 CXX			= clang++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
