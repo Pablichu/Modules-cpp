@@ -1,10 +1,11 @@
-NAME	= numbers_rastreator
+NAME	= mutant_movida
 
 CXX			= clang++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 RM			= rm -f
 
-SRC		=	main.cpp
+SRC		=	main.cpp \
+			MutantStack.cpp
 
 OBJS	=	$(SRC:.cpp=.o)
 

@@ -5,36 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 20:10:27 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/24 11:24:35 by pmira-pe         ###   ########.fr       */
+/*   Created: 2022/02/24 11:28:09 by pmira-pe          #+#    #+#             */
+/*   Updated: 2022/02/24 12:50:20 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyfind.hpp"
+#include "Span.hpp"
 
-void	numberfound(std::list<int> nblst, int const nb)
+int main()
 {
+	Span sp = Span(5);
+
+	sp.addNumber(5);
+	sp.addNumber(3);
+	sp.addNumber(17);
+	sp.addNumber(9);
+	sp.addNumber(11);
+
+	std::cout << sp.shortestSpan() << std::endl;
+	std::cout << sp.longestSpan() << std::endl;
+
+	Span	lotofthem(1000);
 	try
 	{
-		easyfind(nblst, nb);
-		std::cout << " >> Number " << nb << " has been found!!" << std::endl;
+		lotofthem.addNumber();
+		std::cout << lotofthem.shortestSpan() << std::endl;
+		std::cout << lotofthem.longestSpan() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << " >> Number " << nb << " not found!!" << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
-}
-
-int	main()
-{
-	int const		numbers[] = {1, 2, 3, 4, 5, 100, 90, -8, 42};
-	std::list<int>	nblst(numbers, numbers + (sizeof(numbers) / sizeof(int)));
-
-	numberfound(nblst, 1);
-	numberfound(nblst, 5);
-	numberfound(nblst, -8);
-	numberfound(nblst, 42);
-	numberfound(nblst, 0);
-	numberfound(nblst, 69);
 	return 0;
 }
+
