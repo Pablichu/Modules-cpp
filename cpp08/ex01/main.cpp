@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 11:28:09 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/24 12:50:20 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2022/02/24 18:38:14 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main()
 	std::cout << sp.shortestSpan() << std::endl;
 	std::cout << sp.longestSpan() << std::endl;
 
-	Span	lotofthem(1000);
+	Span	lotofthem(10);
 	try
 	{
 		lotofthem.addNumber();
