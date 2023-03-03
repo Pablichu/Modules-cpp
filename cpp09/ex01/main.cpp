@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 18:35:36 by pmira-pe          #+#    #+#             */
-/*   Updated: 2023/03/01 21:28:02 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2023/03/03 23:53:10 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	main(int argc, char **args)
 	try
 	{
 		simpleCheck(argc);
-
-		RPN(args[1]);
+		std::string const notation(args[1]);
+		RPN calculation(notation);
 	}
 	catch(const std::exception& e)
 	{
