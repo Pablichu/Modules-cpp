@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 18:35:31 by pmira-pe          #+#    #+#             */
-/*   Updated: 2023/03/04 00:16:48 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2023/03/06 21:31:00 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,26 @@ void	RPN::_notationChecker(std::string const notation) const
 	for (size_t i = 0; i != lenght; i++)
 		if (!isdigit(notation[i]) && !strchr("+/-* ", notation[i]))
 			throw " >> Invalid characters for a numeric notation";
+
 	//Check notation is right written
+	size_t	nbrs = 0;
+	size_t	signs = 0;
+	for (size_t i = 0; i != lenght; i++)
+	{
+		if (notation[i] == ' ')
+			continue ;
+		if (notation[i] == '-' && isdigit(notation[i + 1]))
+		{
+			i++;
+			nbrs++;
+		}
+		else if (isdigit(notation[i]))
+			nbrs++;
+		else
+			signs++;
+	}
+	if (--nbrs != signs)
+		throw " >> Invalid notation";
 }
 
 void	RPN::_calculateRPN(std::string const notation)
@@ -82,13 +101,9 @@ void	RPN::_extractNext(std::string & nt)
 	{
 		pos++;
 		this->next.nb = (float)(nt[pos] - '0') * -1.0;
-		//std::cout << this->next.nb << std::endl;//Logs delete
 	}
 	else if (isdigit(nt[pos]))
-	{
 		this->next.nb = (float)(nt[pos] - '0');
-		//std::cout << this->next.nb << std::endl;//Logs delete
-	}
 	else
 	{
 		this->next.simbol = nt[pos];
@@ -107,7 +122,6 @@ void RPN::_calcIt()
 	this->_notat.pop();
 	second = this->_notat.top();
 	this->_notat.pop();
-	//std::cout << "HERE: " << first << " " << second << std::endl;
 
 	switch (this->next.simbol)
 	{
