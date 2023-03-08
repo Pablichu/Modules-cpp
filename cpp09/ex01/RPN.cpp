@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 18:35:31 by pmira-pe          #+#    #+#             */
-/*   Updated: 2023/03/08 18:48:09 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2023/03/08 20:06:01 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,11 @@ RPN::RPN()
 	std::cout << " >> RPN Up & ready" << std::endl;
 }
 
-RPN::RPN(std::string const notation)
+RPN::RPN(std::string const notation) : oriNotat(notation)
 {
-	this->_notationChecker(notation);
-	this->_calculateRPN(notation);
+	this->_notationChecker();
+	this->_calculateRPN();
 	
-}
-
-void	RPN::newCalculation(std::string const notation)
-{
-	this->_notationChecker(notation);
-	this->_calculateRPN(notation);
 }
 
 RPN::RPN(RPN const &src)
@@ -43,24 +37,29 @@ RPN::~RPN()
 RPN &RPN::operator=(RPN const &src)
 {
 	if (this != &src)
-		this->_notat = src._notat;
+		this->oriNotat = src.oriNotat;
 	return *this;
 }
 
-void	RPN::_notationChecker(std::string const notation) const
+const std::string &RPN::getNotation() const
 {
-	size_t lenght = notation.length();
-	for (size_t i = 0; i != lenght; i++)
-		if (!isdigit(notation[i]) && !strchr("+/-* ", notation[i]))
-			throw " >> Invalid characters for a numeric notation";
+	return this->oriNotat;
 }
 
-void	RPN::_calculateRPN(std::string const notation)
+void	RPN::_notationChecker() const
 {
-	std::string nt(notation);
+	size_t lenght = this->oriNotat.length();
+	for (size_t i = 0; i != lenght; i++)
+		if (!isdigit(this->oriNotat[i]) && !strchr("+/-* ", this->oriNotat[i]))
+			throw " >> Invalid characters";
+}
+
+void	RPN::_calculateRPN()
+{
+	std::string nt(this->oriNotat);
 	size_t		lenght = nt.length();
 
-	while (notation[--lenght] == ' ') nt.erase(lenght, 1);
+	while (nt[--lenght] == ' ') nt.erase(lenght, 1);
 	while (!nt.empty())
 	{
 		this->_extractNext(nt);
