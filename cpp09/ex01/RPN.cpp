@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 18:35:31 by pmira-pe          #+#    #+#             */
-/*   Updated: 2023/03/06 21:31:00 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2023/03/08 18:48:09 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,32 +53,14 @@ void	RPN::_notationChecker(std::string const notation) const
 	for (size_t i = 0; i != lenght; i++)
 		if (!isdigit(notation[i]) && !strchr("+/-* ", notation[i]))
 			throw " >> Invalid characters for a numeric notation";
-
-	//Check notation is right written
-	size_t	nbrs = 0;
-	size_t	signs = 0;
-	for (size_t i = 0; i != lenght; i++)
-	{
-		if (notation[i] == ' ')
-			continue ;
-		if (notation[i] == '-' && isdigit(notation[i + 1]))
-		{
-			i++;
-			nbrs++;
-		}
-		else if (isdigit(notation[i]))
-			nbrs++;
-		else
-			signs++;
-	}
-	if (--nbrs != signs)
-		throw " >> Invalid notation";
 }
 
 void	RPN::_calculateRPN(std::string const notation)
 {
 	std::string nt(notation);
+	size_t		lenght = nt.length();
 
+	while (notation[--lenght] == ' ') nt.erase(lenght, 1);
 	while (!nt.empty())
 	{
 		this->_extractNext(nt);
@@ -87,6 +69,8 @@ void	RPN::_calculateRPN(std::string const notation)
 		else
 			this->_calcIt();
 	}
+	if (this->_notat.size() != 1)
+		throw " >> Invalid notation";
 	std::cout << "Result: " << this->_notat.top() << std::endl;
 	this->_notat.pop();
 }
@@ -118,6 +102,8 @@ void RPN::_calcIt()
 	float	first;
 	float	second;
 	
+	if (this->_notat.size() < 2)
+		throw " >> Invalid notation";
 	first = this->_notat.top();
 	this->_notat.pop();
 	second = this->_notat.top();
