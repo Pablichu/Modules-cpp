@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 18:08:00 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/01 18:55:34 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2023/03/06 20:51:02 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &src)
 
 void	ScavTrap::attack(std::string const &target) const
 {
-	std::cout << " > " << this->_name << " has performed an attack. Damage: " << this->_attack_damage << std::endl;
+	std::cout << " > " << this->_name << " has performed an attack. Damage: " << this->_attack_damage << " on " << target << std::endl;
 }
 
 void	ScavTrap::guardGate(void)

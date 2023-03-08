@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 13:40:00 by pmira-pe          #+#    #+#             */
-/*   Updated: 2022/02/01 19:03:01 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2023/03/06 20:52:14 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ FragTrap	&FragTrap::operator=(FragTrap const &src)
 
 void	FragTrap::attack(std::string const &target) const
 {
-	std::cout << " > Suprise attack by " << this->_name << ". Damage: " << this->_attack_damage << std::endl;
+	std::cout << " > Suprise attack by " << this->_name << ". Damage: " << this->_attack_damage << " on " << target << std::endl;
 }
 
 void	FragTrap::highFivesGuys(void)

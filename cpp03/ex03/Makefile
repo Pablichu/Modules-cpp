@@ -1,7 +1,7 @@
 NAME	= definitive
 
 CXX		= clang++
-CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic -Wshadow -Wno-shadow
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic
 RM		= rm -f
 
 SRC		=	main.cpp \
