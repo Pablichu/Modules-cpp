@@ -10,3 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "PmergeMe.hpp"
+
+int main(const int argc, const char **args)
+{
+    try
+    {
+        PmergeMe    sorter(argc, ++args);
+        sorter.sortEm();
+    }
+    catch(const char *e)
+    {
+        std::cerr << "Error" << e << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    
+    return 0;
+}

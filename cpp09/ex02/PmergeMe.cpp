@@ -12,23 +12,38 @@
 
 #include "PmergeMe.hpp"
 
-PmergeMe::PmergeMe()
-{
-}
 
-PmergeMe::PmergeMe(const char **arg_nbs)
+PmergeMe::PmergeMe() {}
+
+PmergeMe::PmergeMe(const int args, const char **arg_nbs)
 {
+	//Inserting in vector
+	for (int i = 0; i != args; i++)
+		this->cont1.push_back(std::atoi(arg_nbs[i]));
+	
+	//Inserting in vector
+	for (int i = 0; i != args; i++)
+		this->cont2.push_back(std::atoi(arg_nbs[i]));
 }
 
 PmergeMe::PmergeMe(PmergeMe const &src)
 {
+	*this = src;
 }
 
-PmergeMe::~PmergeMe()
-{
-}
+PmergeMe::~PmergeMe() {}
 
 PmergeMe &PmergeMe::operator=(PmergeMe const &src)
 {
-	// TODO: insert return statement here
+	if (this != &src)
+	{
+		this->cont1 = src.cont1;
+		this->cont2 = src.cont2;
+	}
+	return *this;
+}
+
+void PmergeMe::sortEm()
+{
+	
 }

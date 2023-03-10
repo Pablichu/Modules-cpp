@@ -13,6 +13,7 @@
 #pragma once
 
 #include <iostream>
+#include <chrono>
 #include <vector>
 #include <deque>
 
@@ -22,16 +23,18 @@ class PmergeMe
 	std::vector<int>	cont1;
 	std::deque<int>		cont2;
 
-
+	std::chrono::nanoseconds time1;
+	std::chrono::nanoseconds time2;
 
 	size_t	nbrs;
 
 	public:
 		PmergeMe();
-		PmergeMe(const char **arg_nbs);
+		PmergeMe(const int args, const char **arg_nbs);
 		PmergeMe(PmergeMe const &src);
 		~PmergeMe();
 
 		PmergeMe &operator=(PmergeMe const &src);
 		
+		void sortEm();
 };
