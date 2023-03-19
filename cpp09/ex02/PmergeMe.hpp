@@ -6,13 +6,14 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 22:01:19 by pmira-pe          #+#    #+#             */
-/*   Updated: 2023/03/20 00:49:47 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2023/03/20 00:52:15 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include <chrono>
 #include <vector>
 #include <deque>
 
@@ -22,7 +23,8 @@ class PmergeMe
 	std::vector<int>	cont1;
 	std::deque<int>		cont2;
 
-
+	std::chrono::nanoseconds time1;
+	std::chrono::nanoseconds time2;
 
 	size_t	nbrs;
 
@@ -31,7 +33,7 @@ class PmergeMe
 
 	public:
 		PmergeMe();
-		PmergeMe(const char **arg_nbs);
+		PmergeMe(const int args, const char **arg_nbs);
 		PmergeMe(PmergeMe const &src);
 		~PmergeMe();
 

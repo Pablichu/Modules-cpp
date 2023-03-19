@@ -21,7 +21,6 @@ RPN::RPN(std::string const notation) : oriNotat(notation)
 {
 	this->_notationChecker();
 	this->_calculateRPN();
-	
 }
 
 RPN::RPN(RPN const &src)
@@ -29,10 +28,7 @@ RPN::RPN(RPN const &src)
 	*this = src;
 }
 
-RPN::~RPN()
-{
-	std::cout << " >> RPN Done" << std::endl;
-}
+RPN::~RPN() {}
 
 RPN &RPN::operator=(RPN const &src)
 {
