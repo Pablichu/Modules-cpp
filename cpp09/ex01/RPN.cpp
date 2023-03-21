@@ -119,6 +119,8 @@ void RPN::_calcIt()
 		break;
 
 	case '/':
+		if (first == 0.0 && second == 0.0)
+			throw " >> Your notation";
 		second /= first;
 		break;
 	
