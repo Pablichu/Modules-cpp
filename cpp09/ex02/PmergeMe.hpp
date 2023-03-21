@@ -23,8 +23,8 @@ class PmergeMe
 	std::vector<int>	cont1;
 	std::deque<int>		cont2;
 
-	std::chrono::nanoseconds time1;
-	std::chrono::nanoseconds time2;
+	std::chrono::milliseconds time1;
+	std::chrono::milliseconds time2;
 
 	size_t	nbrs;
 
@@ -38,3 +38,22 @@ class PmergeMe
 		
 		void sortEm();
 };
+
+/*int main() {
+  // Start the timer
+  auto start = std::chrono::high_resolution_clock::now();
+
+  // Call the function you want to measure
+  myFunction();
+
+  // End the timer
+  auto end = std::chrono::high_resolution_clock::now();
+
+  // Compute the elapsed time in milliseconds
+  auto elapsed_time_ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+
+  // Print the elapsed time
+  std::cout << "Elapsed time: " << elapsed_time_ms << " ms" << std::endl;
+
+  return 0;
+}*/
