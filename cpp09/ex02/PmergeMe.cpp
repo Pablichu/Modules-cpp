@@ -6,12 +6,13 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 22:01:23 by pmira-pe          #+#    #+#             */
-/*   Updated: 2023/03/08 20:46:26 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2023/03/20 00:51:50 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
+PmergeMe::PmergeMe() {}
 
 PmergeMe::PmergeMe() {}
 
@@ -21,7 +22,7 @@ PmergeMe::PmergeMe(const int args, const char **arg_nbs)
 	for (int i = 0; i != args; i++)
 		this->cont1.push_back(std::atoi(arg_nbs[i]));
 	
-	//Inserting in vector
+	//Inserting in deque
 	for (int i = 0; i != args; i++)
 		this->cont2.push_back(std::atoi(arg_nbs[i]));
 }
@@ -43,7 +44,18 @@ PmergeMe &PmergeMe::operator=(PmergeMe const &src)
 	return *this;
 }
 
-void PmergeMe::sortEm()
+const bool PmergeMe::sort()
 {
+
+	std::cout << "Before: " << std::endl;
+	std::cout << "After: " << std::endl;
+	return true;
+}
+
+
+template <typename Container>
+const bool PmergeMe::itIsSorted(const Container& c) const
+{
+	return false;
 	
 }
