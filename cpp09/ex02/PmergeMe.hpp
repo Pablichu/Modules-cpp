@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 22:01:19 by pmira-pe          #+#    #+#             */
-/*   Updated: 2023/03/20 00:52:15 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2023/03/21 20:31:59 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <chrono>
 #include <vector>
 #include <deque>
+#include <algorithm>
 
 class PmergeMe
 {
@@ -37,11 +38,15 @@ class PmergeMe
 		PmergeMe(PmergeMe const &src);
 		~PmergeMe();
 
+
 		PmergeMe &operator=(PmergeMe const &src);
 
-		const bool sort();
-
-		template <typename Container>
-		const bool itIsSorted(const Container& c) const;
+		void sort();
+		bool itIsSorted(const bool opt) const;
+		
+	private:
+		template <typename Container> void _sorter(Container& c);
+		template <typename Container> void _merge(Container& c, size_t begin, size_t len);
+		template <class Container> void _insertion(Container& c, size_t begin, size_t len);
 
 };
