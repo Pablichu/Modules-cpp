@@ -17,6 +17,7 @@
 #include <vector>
 #include <deque>
 #include <algorithm>
+#include <typeinfo>
 
 class PmergeMe
 {
@@ -24,8 +25,8 @@ class PmergeMe
 	std::vector<int>	cont1;
 	std::deque<int>		cont2;
 
-	std::chrono::milliseconds time1;
-	std::chrono::milliseconds time2;
+	std::chrono::nanoseconds time1;
+	std::chrono::nanoseconds time2;
 
 	size_t	nbrs;
 
@@ -43,12 +44,11 @@ class PmergeMe
 
 		void sort();
 		bool itIsSorted(const bool opt) const;
-		
+
 	private:
 		template <typename Container> void _sorter(Container& c);
-		template <typename Container> void _merge(Container& c, size_t begin, size_t len);
-		template <class Container> void _insertion(Container& c, size_t begin, size_t len);
-
+		template <typename Container> void _merge(Container& c, const Container& left, const Container& right);
+		template <class Container> void _insertion(Container& c, const size_t begin, const size_t len);
 };
 
 /*int main() {
