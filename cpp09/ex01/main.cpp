@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 18:35:36 by pmira-pe          #+#    #+#             */
-/*   Updated: 2023/03/08 18:42:28 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2023/03/30 18:38:54 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **args)
 		std::string const notation(args[1]);
 		RPN calculation(notation);
 	}
-	catch(const char *e) //not the proper way: https://stackoverflow.com/questions/31754532/terminating-with-uncaught-exception-of-type
+	catch(const char *e)//not the proper way: https://stackoverflow.com/questions/31754532/terminating-with-uncaught-exception-of-type
 	{
 		std::cerr << "Error " << e << std::endl;
 	}
