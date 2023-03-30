@@ -6,7 +6,7 @@
 /*   By: pmira-pe <pmira-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 22:01:39 by pmira-pe          #+#    #+#             */
-/*   Updated: 2023/03/03 22:01:39 by pmira-pe         ###   ########.fr       */
+/*   Updated: 2023/03/30 18:34:42 by pmira-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,14 @@ int main(int argc, char** argvs)
         std::cout << "Bro, don't forget to put a file ok? Just one" << std::endl;
         return 1;
     }
-    // try
-    // {
+    try
+    {
         BitcoinExchange exchanger;
         exchanger.process(argvs[1]);
-    // }
-    // catch(const std::exception& e)
-    // {
-    //     std::cerr << e.what() << '\n';
-    // }
-    
+    }
+    catch(const char *e)
+	{
+		std::cerr << e << std::endl;
+	}    
     return 0;
 }
